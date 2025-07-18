@@ -1,0 +1,231 @@
+<mvc:View
+		xmlns:c="sap.ui.core"
+		controllerName="sfpositioncheck.controller.fileupload"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:u="sap.ui.unified"
+		xmlns="sap.m"
+		xmlns:t="sap.ui.table"
+		xmlns:f="sap.f"
+		xmlns:l="sap.ui.layout"
+		height="100%">
+		<f:DynamicPage id="dynamicPageId" preserveHeaderStateOnScroll="true" headerExpanded="{/headerExpanded}" showFooter="true" fitContent="true">
+			<!-- DynamicPage Title -->
+			<f:title>
+				<f:DynamicPageTitle>
+                <f:heading>
+                    <HBox alignItems="Center">
+                        <Image src="./images/Logo.png" height="50px" />
+						<Title text="" width="250px"></Title>
+                        <Title text="Vacancy Position Tool" level="H2" class="customTitle"/>
+                    </HBox>
+                </f:heading>
+					<f:actions>						
+						<Button icon="sap-icon://excel-attachment" text="{downloadButton}" press="handleDownloadTemplate" tooltip="{i18n>buttonTooltip}"/>
+					</f:actions>
+				</f:DynamicPageTitle>
+			</f:title>
+			
+			<f:header>
+				<f:DynamicPageHeader pinnable="true" class="myDynamicPageHeader">
+					<FlexBox alignItems="Start" justifyContent="End">
+						<Text text="Attach Vacancy List :" class="customText"></Text>
+						<u:FileUploader
+							id="fileUploader" name="myFileUpload" uploadUrl="upload/" tooltip="Upload your file from your local system"
+							change="handleUploadPress" fileType="xlsx,xls" uploadComplete="handleUploadComplete"/>								
+						<Button text="Get Vancant List" type="Emphasized" press="getVacantList" class="sapUiLargeMarginBegin"/>				
+						<Button text="Export" type="Emphasized" press="onExport" class="sapUiSmallMarginBegin"/>								
+						<Button text="Reset" type="Emphasized" press="onReset" class="sapUiSmallMarginBegin"/>								
+					</FlexBox>
+				</f:DynamicPageHeader>				
+			</f:header>
+				
+			<f:content>
+				<ScrollContainer width="100%" horizontal="true" vertical="true" focusable="true">
+					<Table width="200rem" id="idVacantTable" class="customTable" items ="{path: 'VacantPositionModel>/', parameters:{expand: 'PostionCodes'}}" 
+							busyIndicatorDelay="{overridelistView>/tableBusyDelay}" growing="true" growingThreshold="15" updateFinished=".onUpdateFinished" 
+							selectionChange="onTableSelection" includeItemInSelection="true" sticky="ColumnHeaders" alternateRowColors="true">
+	
+						<columns>
+							<Column width="4em">
+							<header>
+								<Label text="SNo"/>
+								</header>
+							</Column>
+							<Column width="10em">
+								<header>
+								<Label text="Position Codes"/>
+								</header>
+							</Column>
+							<Column width="8em">
+							<header>
+								<Text text="Apply Position Code"/>
+								</header>
+							</Column>
+							<Column width="13em"></Column>
+							<Column width="8em">
+								<Text text="User ID"/>
+							</Column>
+							<Column width="5em">
+								<Text text="Status"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Personal ID"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Region of Birth"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Place Of Birth"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Mother Tounge"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Country Of Birth"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Date Of Birth"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Start Date"/>
+							</Column>
+							<Column width="15em">
+								<Text text="Candidate Name"/>
+							</Column>
+							<Column width="12em">
+								<Text text="POP"/>
+							</Column>
+							<Column width="10em">
+								<Text text="Job Function Code"/>
+							</Column>
+							<Column width="10em">
+								<Text text="Legal Entity Code"/>
+							</Column>
+							<Column width="8em">
+								<Text text="IC Code"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Segment"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Cluster"/>
+							</Column>
+							<Column width="10em">
+								<Text text="Department/Projects"/>
+							</Column>
+							<Column width="7em">
+								<Text text="Location"/>
+							</Column>
+							<Column width="7em">
+								<Text text="Pay Grade"/>
+							</Column>			
+							<Column width="12em">
+								<Text text="Strategic Business Group"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Department"/>
+							</Column>	
+							<Column width="7em">
+								<Text text="Company"/>
+							</Column>			
+							<Column width="8em">
+								<Text text="Job Code"/>
+							</Column>
+							<Column width="7em">
+								<Text text="Vacant"/>
+							</Column>
+							<Column width="6em">
+								<Text text="Band"/>
+							</Column>
+							<Column width="10em">
+								<Text text="Employee Group"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Position Title"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Position Name"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Cost Center"/>
+							</Column>
+							<Column width="10em">
+								<Text text="Appointment Type"/>
+							</Column>
+							<Column width="10em">
+								<Text text="Employee Type"/>
+							</Column>
+							<Column width="8em">
+								<Text text="Event Reason"/>
+							</Column>
+							<Column width="12em">
+								<Text text="Immediate Supervisor"/>
+							</Column>
+							<Column width="12em">
+								<Text text="LT Group of Companies"/>
+							</Column>
+							<Column width="10em">
+								<Text text="Office /Site"/>
+							</Column>
+						</columns>
+		
+						<items>
+							<ColumnListItem vAlign="Middle">
+								<cells>									
+									<Text text="{VacantPositionModel>Index}" />
+									<Text text="{VacantPositionModel>PostionCodes}" />
+
+									<!-- <Text text="{VacantPositionModel>PostionCodes/0/code}" /> -->
+
+									<!-- <ComboBox items="{
+												path:'/PostionCodes',
+												sorter: { path: 'PostionCodes' }
+											}">
+										<c:Item key="{codes}" text="{codes}" />
+									</ComboBox> -->
+
+									<Input value="" maxLength="8" visible="{= ${VacantPositionModel>PostionCodeLength} === 0 ? false : true}"/>
+									<Button text="{= ${VacantPositionModel>PostionCodeLength} === 0 ? 'Create Position/Hire Emp' : 'Hire Emp'}" press="applyPosition" />
+									<Text text="{VacantPositionModel>UserID}" />
+									<Text text="{VacantPositionModel>Status}" />
+									<Text text="{VacantPositionModel>PersonId_External}" />
+									<Text text="{VacantPositionModel>regionOfBirth}" />
+									<Text text="{VacantPositionModel>placeOfBirth}" />
+									<Text text="{VacantPositionModel>PerPerson_MotherTounge}" />
+									<Text text="{VacantPositionModel>countryOfBirth}" />
+									<Text text="{VacantPositionModel>dateOfBirth}" />
+									<Text text="{VacantPositionModel>StartDate}" />					
+									<Text text="{VacantPositionModel>CandidateName}" />
+									<Text text="{VacantPositionModel>POP}" />
+									<Text text="{VacantPositionModel>JobFunctionCode}" />
+									<Text text="{VacantPositionModel>LegalEntityCode}" />					
+									<Text text="{VacantPositionModel>ICCode}" />
+									<Text text="{VacantPositionModel>SegmentCode}" />
+									<Text text="{VacantPositionModel>ClusterCode}" />
+									<Text text="{VacantPositionModel>DepartmentProject}" />
+									<Text text="{VacantPositionModel>Location}" />
+									<Text text="{VacantPositionModel>PayGrade}" />
+									<Text text="{VacantPositionModel>StraBusinessGroup}" />
+									<Text text="{VacantPositionModel>Department}" />
+									<Text text="{VacantPositionModel>Company}" />
+									<Text text="{VacantPositionModel>JobCode}" />
+									<Text text="{VacantPositionModel>Vacant}" />
+									<Text text="{VacantPositionModel>Band}" />
+									<Text text="{VacantPositionModel>EmployeeGroup}" />
+									<Text text="{VacantPositionModel>PositionTitle}" />
+									<Text text="{VacantPositionModel>PositionName}" />
+									<Text text="{VacantPositionModel>CostCenter}" />		
+									<Text text="{VacantPositionModel>employeeClass}" />
+									<Text text="{VacantPositionModel>employeeType}" />
+									<Text text="{VacantPositionModel>eventReason}" />
+									<Text text="{VacantPositionModel>managerId}" />
+									<Text text="{VacantPositionModel>customString5}" />
+									<Text text="{VacantPositionModel>trackId}" />
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</ScrollContainer>
+			</f:content>
+		</f:DynamicPage>
+</mvc:View>

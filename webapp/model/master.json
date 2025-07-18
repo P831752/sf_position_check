@@ -1,0 +1,626 @@
+{
+    "QualificationType": [
+        {
+            "EffectiveStartDate": "1/1/1900",
+            "ExternalCode": "Q07",
+            "ExternalCodeValue": "",
+            "DefaultValue": "Master",
+            "QualificationSubType": [
+                {
+                    "EffectiveStartDate": "1/1/1900",
+                    "ExternalCode": "Q07N",
+                    "ExternalCodeValue": "Q07",
+                    "DefaultValue": "Non-Engineering",
+                    "EducationCertificate": [
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N048",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Tourism Administration"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N047",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Social Work (MSW)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N046",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Science Technology (MSc Tech)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N044",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Science (MSc)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N043",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Project Management (MPM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N042",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Planning (MPlan)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N041",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Philosophy (M Phil)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N040",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Personnel Management And Industrial Relations"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N039",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Personnel Management (MPM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N038",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Management Studies (MMS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N037",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Management Science"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N036",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Laws (LLM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N035",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Labour Welfare (MLW)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N034",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Labour Studies (MLS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N033",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Labour Management (MLM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N032",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Information Management (MIM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N031",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Industrial Hygiene & Safety (MIHS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N030",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Human Resource Management (MHRM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N029",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Foreign Trade (MFT)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N028",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Financial Management (MFM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N027",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Finance and Control (MFC)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N026",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Computer Science (MCS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N025",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Computer Applications (MCA)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N024",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Communication Studies"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N023",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Commerce (MCom)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N022",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Business\u00c2\u00a0Law"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N021",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Business Management (MBM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N020",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Business Law (MBL)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N019",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Business Administration (MBA)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N018",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master of Arts (MA)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N017",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master in Personnel Management (MPM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N016",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master in Marketing Management (MMM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N015",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master in Management Studies"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N014",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master in Library Science (MLS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N013",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master in Human Resource Management (MHRM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N012",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master In Financial Management (MFM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N011",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master in Construction Project Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N010",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master in Construction Law, Arbitration and Adjudication"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N009",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master in Computer Management (MCM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N008",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Master in Business Studies (MBS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N007",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Cost and Works Accountant"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N006",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Cost and Management Accountant (CMA)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N005",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Company Secretary (CS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N004",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Chartered Global Management Accountant (GCMA)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N003",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Chartered Financial Analyst (CFA)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N002",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Chartered Accountant (CA)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N001",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Certified Public Accountant (CPA)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N050",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Certified Management Accountant"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N049",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Chartered Management Accountant (CIMA)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07N051",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Associate Member of the Institute of Cost & Works Accountants of India (AICWA)"
+                        }
+                    ],
+                    "Branch": [
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0218",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Forensic Science"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0217",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Foreign Trade"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0216",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Food Technology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0215",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Food And Nutritional Biotechnology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0214",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Food and Beverage Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0213",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Folkloristics and Mass Media"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0212",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Fire Technology and Industrial Safety Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0211",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Fire and Safety Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0210",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Fire and Life Safety"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0209",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Fintech"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0208",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Fine Arts"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0207",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Financial Services Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0206",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Financial Services"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0205",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Financial Markets"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0204",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Financial Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0203",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Financial Economics"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0202",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Financial Analytics"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0201",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Financial Analysis"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0200",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Financial Administration"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07NB0199",
+                            "ExternalCodeValue": "Q07N",
+                            "DefaultValue": "Finance (Hons)"
+                        }
+                    ]
+                },
+                {
+                    "EffectiveStartDate": "1/1/1900",
+                    "ExternalCode": "Q07E",
+                    "ExternalCodeValue": "Q07",
+                    "DefaultValue": "Engineering",
+                    "EducationCertificate": [
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07E007",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Masters in Engineering (MS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07E006",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Master of Technology (M Tech)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07E005",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Master of Engineering (ME)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07E004",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Master of Design"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07E003",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Master of Building Engineering and Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07E002",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Master of Architecture (M Arch)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07E001",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Integrated Bachelor of Technology and Master of Technology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07E008",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Chartered Engineer (CEng)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07E009",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Master of Science in Engineering (MSc Engg)"
+                        }
+                    ],
+                    "Branch": [
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0206",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Design"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0205",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Defence Technology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0197",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Cyber Security & Digital Forensics"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0196",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Cyber Security"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0195",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Cyber Forensics & Information Security"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0194",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Cyber Forensics"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0193",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Cryogenic Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0192",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Creative & Applied Computation"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0191",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Control Systems"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0190",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Control System Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0189",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Construction Technology & Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0188",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Construction Technology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0187",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Construction Safety Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0186",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Construction Planning & Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0185",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Construction Management for Working Executives"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0184",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Construction Management & Industrial Development"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0183",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Construction Management & Financial Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0182",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Construction Management & Economics"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0181",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Construction Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q07EB0180",
+                            "ExternalCodeValue": "Q07E",
+                            "DefaultValue": "Construction Engineering & Management"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

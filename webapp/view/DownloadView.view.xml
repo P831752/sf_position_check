@@ -1,0 +1,443 @@
+<mvc:View controllerName="sfpositioncheck.controller.DownloadView"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true" id="BolForm"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout"
+	xmlns:sap.suite.ui.commons="sap.suite.ui.commons"
+	xmlns:sap.ui.commons="sap.ui.commons"
+	xmlns:sap.ui.core="sap.ui.core"
+	xmlns:semantic="sap.m.semantic" >
+	<App>
+		<pages>
+			<Page class="sapUiSizeCompact disSub" id="mainPage"
+				navButtonPress="onNavBack" showHeader="true" showNavButton="true"
+				showSubHeader="true">
+				<content>
+					<Toolbar class="toolbarHeight">
+						<ToolbarSpacer />
+						<Button text="Print" type="Emphasized" press="onPressDownload" />
+					</Toolbar>
+					<l:Grid class="outerGrid outerGridUK" defaultSpan="L12 M12 S12"
+						id="outerGrid">
+						<l:content>
+							<mvc:HTMLView class="displaySpace" viewName="sfpositioncheck.templates.print"/>
+							<l:Grid class="printAreaBox " defaultSpan="L12 M12 S12"
+								id="gridUKBol" vSpacing="0">
+								<l:content>
+									<HBox>
+										<VBox class="blockClass">
+											<HBox >
+												<Image src="../templates/lt.PNG"  class="logoLT headerLogo sapUiSmallMargin" />
+												<Title text="Employee Employment Details" class="headerTitle sapUiSmallMargin" />
+											</HBox>
+											<HBox >
+												<Image src="../templates/woman_image.png" class="sapUiSmallMarginBegin sapUiSmallMarginBottom"/>
+												<VBox >
+													<HBox class="sapUiSmallMarginTop sapUiSmallMarginBegin">
+														<Text text="PS ID : "/>
+														<Text text=" {PSID}" class="sapUiTinyMarginBegin"/>
+													</HBox>
+													<HBox class="sapUiSmallMarginBegin">
+														<Text text="Name : "/>
+														<Text text=" {Name}" class="sapUiTinyMarginBegin"/>
+													</HBox>
+													<HBox class="sapUiSmallMarginBegin">
+														<Text text="Grade/Cadre : "/>
+														<Text text=" {Grade}" class="sapUiTinyMarginBegin"/>
+													</HBox>
+													<HBox class="sapUiSmallMarginBegin">
+														<Text text="IC : "/>
+														<Text text=" {IC}" class="sapUiTinyMarginBegin"/>
+													</HBox>
+												</VBox>
+											</HBox>
+										</VBox>
+									</HBox>
+									<HBox >
+										<VBox class="blockClass">
+											<Title text="SSC" class="titleClass" />
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Time Period" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{SSCTimePeriod}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Education Establishment" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text
+														text="{SSCEducationEstablishment}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Course Description" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{SSCCourseDescription}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Year of Passing" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{SSCYearofPassing}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Percentage" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{SSCPercentage}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="University/Board" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{SSCUniversity}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="School/College Name" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{SSCSchool}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="City" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{SSCCity}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="State" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{SSCState}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Country" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{SSCCountry}" />
+												</VBox>
+											</HBox>
+										</VBox>
+										<VBox class="blockClass">
+											<Title text="HSC" class="titleClass" />
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Time Period" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{HSCTimePeriod}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Education Establishment" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text
+														text="{HSCEducationEstablishment}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Course Description" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{HSCCourseDescription}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Year of Passing" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{HSCYearofPassing}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Percentage" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{HSCPercentage}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="University/Board" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{HSCUniversity}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="School/College Name" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{HSCSchool}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="City" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{HSCCity}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="State" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{HSCState}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Country" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{HSCCountry}" />
+												</VBox>
+											</HBox>
+										</VBox>
+									</HBox>
+                                    
+                                    <!-- <HBox >
+										<VBox class="blockClass">
+											<Title text="Diploma" class="titleClass" />
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Time Period" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{DiplTimePeriod}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Education Establishment" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text
+														text="{DiplEducationEstablishment}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Course Description" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{DiplCourseDescription}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Degree" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{DiplDegree}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Major" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{DiplMajor}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Year of Passing" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{DiplYearofPassing}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Percentage" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{DiplPercentage}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="University/Board" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{DiplUniversity}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="School/College Name" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{DiplSchool}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="City" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{DiplCity}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="State" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{DiplState}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Country" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{DiplCountry}" />
+												</VBox>
+											</HBox>
+										</VBox>
+                                    </HBox> -->
+
+                                    <HBox>
+										<VBox class="blockClass">
+											<Title text="Graduation" class="titleClass" />
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Time Period" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{GradTimePeriod}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Education Establishment" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text
+														text="{GradEducationEstablishment}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Course Description" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{GradCourseDescription}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Degree" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{GradDegree}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Major" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{GradMajor}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Year of Passing" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{GradYearofPassing}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Percentage" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{GradPercentage}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="University/Board" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{GradUniversity}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="School/College Name" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{GradSchool}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="City" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{GradCity}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="State" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{GradState}" />
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox class="fieldClass">
+													<Text text="Country" />
+												</VBox>
+												<VBox class="fieldText">
+													<Text text="{GradCountry}" />
+												</VBox>
+											</HBox>
+										</VBox>
+									</HBox>
+								</l:content>
+							</l:Grid>
+						</l:content>
+					</l:Grid>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

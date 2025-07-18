@@ -1,0 +1,26 @@
+[
+    	{
+			"key": "1",
+			"text": "Standard or Class 10 and less"
+		},
+		{
+			"key": "2",
+			"text": "Standard or Class 12 and 11 or SSLC"
+		},
+		{
+			"key": "Non",
+			"text": "Non-Engineering"
+		},
+		{
+			"key": "4",
+			"text": "Engineering"
+		},
+		{
+			"key": "5",
+			"text": "Technical"
+		},
+		{
+			"key": "6",
+			"text": "Non-Technical"
+		}
+	]

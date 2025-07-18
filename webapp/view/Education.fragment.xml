@@ -1,0 +1,12 @@
+<core:FragmentDefinition
+		xmlns="sap.m"
+		xmlns:core="sap.ui.core">
+	<Menu itemSelected="onMenuAction">
+		<MenuItem text="Trade Certificate"/>
+		<MenuItem text="Diploma"/>
+		<MenuItem text="Graduation"/>
+		<MenuItem text="Masters"/>
+		<MenuItem text="Post Graduate Degree/Diploma/Program"/>
+		<MenuItem text="Doctorate/Ph.D/Fellowship"/>
+	</Menu>
+</core:FragmentDefinition>

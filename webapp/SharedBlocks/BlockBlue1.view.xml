@@ -1,0 +1,42 @@
+<mvc:View
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:m="sap.m"
+		xmlns:core="sap.ui.core"
+		xmlns:html="http://www.w3.org/1999/xhtml"
+		controllerName="sfpositioncheck.SharedBlocks.BlockBlue1">
+	<!-- <html:div style="height:4em; background-color: #A9EAFF ;"/> -->
+						<!-- <m:VBox>
+							<m:Label design="Bold" text="Attachments"/>
+							<m:HBox>
+								<m:items>
+									<m:VBox class="sapUiLargeMarginEnd" width="25%">
+										<m:Label design="Bold" text="Qualification Sub Type" required="true"/>
+										<m:Text id="tQuaSubtype6" text="Diploma In Admn.Management" visible="true"/>							
+										<m:ComboBox id="iQuaSubtype6" visible="false" selectedKey="{quasubtypeModel>key}"
+												items="{
+													path: 'quasubtypeModel>/',
+													sorter: { path: 'quasubtypeModel>text' }
+												}">
+												<core:Item key="{quasubtypeModel>key}" text="{quasubtypeModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Institution Name" />
+										<m:Text id="tInsName6" text="National Public School" visible="true"/>								
+										<m:ComboBox id="iInsName6" visible="false" selectedKey="{instnameModel>key}"
+												items="{
+													path: 'instnameModel>/',
+													sorter: { path: 'instnameModel>text' }
+												}">
+												<core:Item key="{instnameModel>key}" text="{instnameModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Duration of the Course" />
+										<m:Text id="tDuration6" visible="true" text="1"/>
+										<m:Input id="iDuration6" visible="false" value="1"/>
+			                        </m:VBox>																			
+                    			</m:items>
+                			</m:HBox>
+						</m:VBox> -->
+</mvc:View>

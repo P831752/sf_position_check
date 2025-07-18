@@ -1,0 +1,117 @@
+/* Enter your custom styles here */
+.myDynamicPageHeader {
+    background-color: #758ca4 !important;
+}
+
+.myDynamicPageHeaderLMS {
+    background-color: hsl(12, 87%, 48%) !important;
+}
+
+.subHeaderStyle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.rgoldLeftActionBar {
+    justify-content: flex-start !important;
+}
+
+.heightadjust {
+    height: 10px;
+}
+
+/* .sapUxAPObjectPageSubSectionHeaderTitle {
+    display: none;
+} */
+
+.attachColor {
+    background-color: hsl(12, 87%, 48%) !important;
+}
+.sapMTextBold div > span {
+    font-size: 15px !important;
+} 
+
+.sapTextBold {
+    font-weight: bold !important;
+    font-size: 1rem !important;
+    color: #1d2d3e !important;
+    /* color: #256f3a !important; */
+
+} 
+
+.redAsterisk {
+    color: black;
+}
+
+.customText {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 5px 10px;
+    text-align: center;
+  }
+.customTitle {
+    color: #05558f; /* custom blue */
+    text-align: End;
+    width: 100%; /* needed for alignment to work */
+  }
+  
+.customTable .sapMListTblHeaderCell {
+    color: #ffffff;
+    background-color: #758ca4;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.sapMColumnHeader .sapMLabel {
+    color: #ffffff;
+    background-color: #7885a6;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.cutomClass .sapMWizardStepTitle {
+    display: none !important;
+    height: 0px !important;
+}
+
+.cutomClassStep .sapMWizard .sapMWizardStep {
+    position: relative;
+    padding-bottom: 0rem;
+    height: 0px !important;
+}
+
+.ChangeTitle .sapUiForm .sapUiFormTitle {
+    font-weight: bold;
+	box-sizing: content-box;
+}
+
+.hideformtitle .sapUiFormM .sapUiFormContainerTitle>.sapUiFormTitle {
+   display: none;
+}
+
+.changeHeight {
+	max-height: 155px !important;	
+}
+
+.notifyNumber {
+    text-align: center !important;
+    position: relative !important;
+    top: -0.5rem !important;
+    left: -0.99rem !important;
+    border-radius: 50% !important;
+    background-color: red !important;
+    color: white !important;
+    font-size: 0.7rem !important;
+    padding-right: 0.1rem !important;
+    padding-left: 0.1rem !important;
+}
+
+.notifyNumber .sapMTBShrinkItem {
+    min-width: 0.7rem !important;
+}
+/* Remove space bar of footer*/
+.SpacebarInitial .sapMDialogFooter .sapMTBSpacerFlex {
+    flex: initial;
+}

@@ -1,0 +1,214 @@
+<mvc:View controllerName="sfpositioncheck.controller.fileupload" xmlns="sap.m" xmlns:semantic="sap.f.semantic"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
+	xmlns:ui="sap.ui.table" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable" xmlns:variant="sap.ui.comp.variants" xmlns:f="sap.f" xmlns:commons="sap.suite.ui.commons">
+	<Page title="Count" id="masterPage">
+		<Wizard id="idManageMaterialRequestWizard" class="cutomClass" showNextButton="false">
+			<WizardStep id="idRequestSelection" class="cutomClassStep" validated="true" title="RequestorSelection" nextStep="idRequestorData">
+				<content>
+					<VBox justifyContent="Center" id="idVBox6">
+						<OverflowToolbar class="sapUiNoMarginTop">
+							<variant:VariantManagement id="sIdMNGVarMgmtFB" class="sapUiSmallMarginBegin sapUiCompFilterBarMarginLeft" showExecuteOnSelection="false"
+								showShare="false" standardItemText="{i18n>stanView}" save="fnSaveFBVariant" manage="fnManageTableVariant" select="fnMFBVariantSelect"
+								variantItems="{path:'/ETVariantSet',filters: [{ path: 'VariantType', operator: 'EQ', value1: 'MNGFB'}]}" visible="true">
+								<variant:variantItems>
+									<variant:VariantItem text="{VariantName}" key="{VariantKey}" author="{UserId}"></variant:VariantItem>
+								</variant:variantItems>
+							</variant:VariantManagement>
+							<ToolbarSpacer/>
+							<Button id="attachCFWarning" tooltip="{i18n>showdisclaimer}" press="fnOpenDialog($event, 'DisclaimerDialog')" icon="sap-icon://message-warning"
+                            	type="Default"/>
+						</OverflowToolbar>
+								<form:SimpleForm id="idUserDataForm1" editable="true" title="{i18n>RequestHeader}" class="hideformtitle ChangeTitle">
+							<Label id="idLblRequestNumber" text="{i18n>RequestNumber}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<Input id="idInpRequestNumber" submit="onGetList" change="fnSetCurrentVariantModified"/>
+							<Label id="idLblStandard" text="{i18n>Standard}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<Input id="idInpStandard" showValueHelp="true" valueHelpOnly="false" valueHelpRequest="onF4HelpStdDraw" submit="onGetList"
+								change="fnSetCurrentVariantModified"/>
+							<Label id="idLblMaterial" text="{i18n>Material}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<Input id="idInpMaterial" showValueHelp="true" valueHelpOnly="false" valueHelpRequest="onF4HelpMaterial" submit="onGetList"
+								change="fnSetCurrentVariantModified"/>
+							<Label id="idLblRequestorActor" text="{i18n>RequestorActor}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<MultiInput id="idInpRequestorActor" submit="onGetList" showValueHelp="true" valueHelpRequest="fnOpenDialog($event, 'F4_RequestorActor')"
+								change="fnSetCurrentVariantModified"/>
+							<Label id="idLblOriginator" text="{i18n>Originator}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<ComboBox id="idDDOriginator" showSecondaryValues="false" items="{ path: '/ETOriginatorSet', length:10000}"
+								change="fnSetCurrentVariantModified">
+								<core:ListItem key="{ZORIGINATOR}" text="{ZDESC}"/>
+							</ComboBox>
+							<Label id="idLblEngineeringValidator" text="{i18n>EngineeringValidator}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<ComboBox id="idDDEngineeringValidator" showSecondaryValues="false" items="{ path: '/ETValidInsSet', length:10000}"
+								change="fnSetCurrentVariantModified">
+								<core:ListItem key="{ZVALIDATOR}" text="{ZDESC}"/>
+							</ComboBox>
+							<Label id="idLblRequestCreationDate" text="{i18n>RequestCreationDate}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<DateRangeSelection id="idInpDRS_RequestCreationDate" change="fnSetCurrentVariantModified" displayFormat="dd.MM.yyyy"/>
+							<Label id="idLblACType" text="{i18n>A/CType}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<ComboBox id="idDDACType" items="{ path: '/ETAircraftTypeSet'}" enabled="true" change="fnSetCurrentVariantModified">
+								<core:Item text="{ZDESC}" enabled="true" key="{ZACTYPE}"/>
+							</ComboBox>
+							<Label id="idLblProcurementResponsible" text="{i18n>ProcurementResponsible}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<ComboBox id="idDDProcurementResponsibleView" selectedKey="{Group>/procRespo}" items="{ path: 'Group>/ETProcRespSet'}" change="fnFilterConsumingPlant">
+								<core:Item text="{Group>ZDESC}" key="{Group>ZPROC_RESP}"/>
+								<!--enabled="{ parts: [{path: 'Group>/consumNacto'},{path: 'ZPROC_RESP'}],formatter: '.formatter.fnFormatEnableProcRespo'}"-->
+							</ComboBox>
+							<Label id="idLblRequestType" text="{i18n>RequestType}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<ComboBox id="idDDRequestType" showSecondaryValues="false" items="{ path: '/ETRequestTypeSet', length:10000}"
+								change="fnSetCurrentVariantModified">
+								<core:ListItem key="{ZREQTYP}" text="{ZDESC}"/>
+							</ComboBox>
+							<Label id="idLblUsageGroup" text="{i18n>UsageGroup}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<MultiComboBox id="idMCBUsageGroup" selectionChange="fnSetCurrentVariantModified" selectionFinish="handleSelectionUsageGroupFinish"
+								items="{ path: '/ETUsageGroupSet'}">
+								<core:Item key="{ZZUSAGE_GROUP}" text="{ZDESC}"/>
+							</MultiComboBox>
+							<core:Title/>
+							<Label id="idLblMaterialGroup" text="{i18n>MaterialGroup}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<MultiInput id="idInpMaterialGroup" showValueHelp="true" valueHelpOnly="false" valueHelpRequest="onF4HelpMaterialGroup" submit="onGetList"
+								change="fnSetCurrentVariantModified"/>
+							<Label id="idLblRelDefDate" text="{i18n>RelDefDate}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<DateRangeSelection id="idInpDRS_RelDefDate" change="fnSetCurrentVariantModified" displayFormat="dd.MM.yyyy"/>
+							<Label id="idLblNeedDate" text="{i18n>NeedDate}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<DateRangeSelection id="idInpDRS_NeedDate" change="fnSetCurrentVariantModified" displayFormat="dd.MM.yyyy"/>
+							<Label id="idLblConsumingNATCO" text="{i18n>ConsumingNATCO}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<MultiComboBox id="idDDConsumingNATCO"  showSecondaryValues="false"
+								items="{ path: '/ETConsNATCOListSet', length:10000}" selectionFinish="onChangeConsumingNATCO">
+								<core:Item key="{DomvalueL}" text="{Ddtext}"
+									enabled="{=${Group>/procRespo} === '01'|| ${Group>/procRespo} === undefined || ${Group>/procRespo} ===''}"/>
+							</MultiComboBox>
+							<Label id="idLblConsumingPlant" text="{i18n>ConsumingPlant}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<!--<ComboBox id="idDDConsumingPlant" showSecondaryValues="false" items="{ path: 'ETConsumerPlantSetModel>/', length:10000}"-->
+							<!--	change="onChangeConsumingPlant">-->
+							<!--	<core:ListItem key="{ETConsumerPlantSetModel>ZCONSPLANT}" text="{ETConsumerPlantSetModel>ZDESC}"-->
+							<!--		additionalText="{ETConsumerPlantSetModel>ZCONSNATCO}"/>-->
+							<!--</ComboBox>-->
+							<MultiComboBox id="idDDConsumingPlant" selectionChange="fnSetCurrentVariantModified"
+								items="{ path: 'ETConsumerPlantSetModel>/', length:10000}">
+								<core:ListItem key="{ETConsumerPlantSetModel>ZCONSPLANT}" text="{ETConsumerPlantSetModel>ZDESC}"
+									additionalText="{ETConsumerPlantSetModel>ZCONSNATCO}"/>
+							</MultiComboBox>
+							<Label id="idLblUpdatedFlag" text="{i18n>UpdatedFlag}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<Input id="idInpUpdatedFlag" submit="onGetList" change="fnSetCurrentVariantModified"/>
+							<Label id="idLblMODFilter" text="{i18n>MOD}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<Input id="idInpMODFilter" submit="onGetList" change="fnSetCurrentVariantModified"/>
+							<Label id="idLblMSNFilter" text="{i18n>MSN}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<Input id="idInpMSNFilter" submit="onGetList" change="fnSetCurrentVariantModified"/>
+							<Label id="idLblOldMatRefFilter" text="{i18n>oldmatref}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<Input id="idInpOldMatRefFilter" submit="onGetList" change="fnSetCurrentVariantModified"/>
+							<Label id="idLblExOneShot" text="{i18n>ExOneShot}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<CheckBox id="idChBxExOneShot" select="fnSetCurrentVariantModified">
+								<!--<layoutData>-->
+								<!--	<l:GridData span="XL1 L2 M2 S4"/>-->
+								<!--</layoutData>-->
+							</CheckBox>
+							<Label id="idLblIncludeCancelledRequests" text="{i18n>IncludeCancelledRequests}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<CheckBox id="idCBIncludeCancelledRequests" select="fnSetCurrentVariantModified"></CheckBox>
+							<Label id="idLblNotQualifiedRequests" text="{i18n>NotQualifiedRequests}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<CheckBox id="idCBNotQualifiedRequests" select="fnSetCurrentVariantModified"></CheckBox>
+							<Label id="idLblHInt" text="{i18n>HInt}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<CheckBox id="idCBHInt" selected="false" select="fnSetCurrentVariantModified"></CheckBox>
+						</form:SimpleForm>
+						<!--</VBox>-->
+						<!--<VBox id="idVBox2" justifyContent="Start" width="50%">-->
+						<form:SimpleForm id="idUserDataForm2" editable="true" title="{i18n>ActivitiesHeader}" class="hideformtitle ChangeTitle">
+							<Label id="idLblStatusE" text="{i18n>StatusE}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<MultiComboBox id="idMCBStatusE" selectionChange="fnSetCurrentVariantModified" selectionFinish="handleSelectionStatusEFinish"
+								items="{ path: '/ETStatusSet',filters: [{path: 'ZbpelValStatus', operator: 'EQ', value1: 'RE'}]}">
+								<core:Item key="{ZvalStgrval}" text="{ZvalStgrvaldesc}"/>
+							</MultiComboBox>
+							<Label id="idLblStatusP" text="{i18n>StatusP}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<MultiComboBox id="idMCBStatusP" selectionChange="fnSetCurrentVariantModified" selectionFinish="handleSelectionStatusPFinish"
+								items="{ path: '/ETStatusSet',filters: [{path: 'ZbpelValStatus', operator: 'EQ', value1: 'RP'}]}">
+								<core:Item key="{ZvalStgrval}" text="{ZvalStgrvaldesc}"/>
+							</MultiComboBox>
+							<Label id="idLblStatusT" text="{i18n>GlobalStatus}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<MultiComboBox id="idMCBStatusT" selectionChange="fnSetCurrentVariantModified" selectionFinish="handleSelectionStatusTFinish"
+								items="{ path: '/ETStatusSet',filters: [{path: 'ZbpelValStatus', operator: 'EQ', value1: 'RT'}]}">
+								<core:Item key="{ZvalStgrval}" text="{ZvalStgrvaldesc}"/>
+							</MultiComboBox>
+							<Label id="idLblStatusO" text="{i18n>StatusO}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<MultiComboBox id="idMCBStatusO" selectionChange="fnSetCurrentVariantModified" selectionFinish="handleSelectionStatusOFinish"
+								items="{ path: '/ETStatusSet',filters: [{path: 'ZbpelValStatus', operator: 'EQ', value1: 'RO'}]}">
+								<core:Item key="{ZvalStgrval}" text="{ZvalStgrvaldesc}"/>
+							</MultiComboBox>
+							<Label id="idLblUpdateStatusDate" text="{i18n>UpdateStatusDate}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<DateRangeSelection id="idInpDRS_UpdateStatusDate" change="fnSetCurrentVariantModified" displayFormat="dd.MM.yyyy"/>
+							<Label id="idLblLastUpdator" text="{i18n>LastUpdator}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<Input id="idInpLastUpdator" submit="onGetList" change="fnSetCurrentVariantModified"/>
+							<Label id="idLblValidatedDate" text="{i18n>ValidatedDate}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<DateRangeSelection id="idInpDRS_ValidatedDate" change="fnSetCurrentVariantModified" displayFormat="dd.MM.yyyy"/>
+							<core:Title/>
+							<Label id="idLblEngineeringActor" text="{i18n>EngineeringActor}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<Input id="idInpEngineeringActor" submit="onGetList" change="fnSetCurrentVariantModified"/>
+							<Label id="idLblEngineeringChangeDate" text="{i18n>EngineeringChangeDate}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<DateRangeSelection id="idInpDRS_EngineeringChangeDate" change="fnSetCurrentVariantModified" displayFormat="dd.MM.yyyy"/>
+							<Label id="idLblProcurementActor" text="{i18n>ProcurementActor}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<Input id="idInpProcurementActor" submit="onGetList" change="fnSetCurrentVariantModified"/>
+							<Label id="idLblProcurementChangeDate" text="{i18n>ProcurementChangeDate}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<DateRangeSelection id="idInpDRS_ProcurementChangeDate" change="fnSetCurrentVariantModified" displayFormat="dd.MM.yyyy"/>
+							<Label id="idLblOrderingActor" text="{i18n>OrderingActor}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<Input id="idInpOrderingActor" submit="onGetList" change="fnSetCurrentVariantModified"/>
+							<Label id="idLblOrderingChangeDate" text="{i18n>OrderingChangeDate}" design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<DateRangeSelection id="idInpDRS_OrderingChangeDate" change="fnSetCurrentVariantModified" displayFormat="dd.MM.yyyy"/>
+						</form:SimpleForm>
+
+						<VBox width="100%" alignContent="Start">
+							<form:SimpleForm editable="true" layout="ColumnLayout">
+								<Label/>
+								<Button text="{i18n>GetList}" id="idBTNGetList" iconFirst="true" press="onGetList" type="Emphasized" class="sapUiLargeMarginEnd" width="90%"/>
+								<Button text="{i18n>Clear}" id="idBTNClear" iconFirst="true" press="onClear" class="sapUiLargeMarginEnd" width="90%"/>
+								<Button text="{i18n>filters}" id="idBTNFilter" iconFirst="true" press="onFilters" class="sapUiLargeMarginEnd" width="90%" visible="false"/>
+								<Button text="{i18n>Help}" id="idBTNStep1Help" press="onHelp" class="sapUiLargeMarginEnd" width="90%"/>
+							</form:SimpleForm>
+						</VBox>
+						<l:VerticalLayout class="sapUiContentPadding" id="oVerticalContentStep1" width="33%">
+							<l:content></l:content>
+						</l:VerticalLayout>
+					</VBox>
+				</content>
+			</WizardStep>
+
+			<WizardStep id="idRequestorData" class="cutomClassStep" validated="true" title="{i18n>RequestorSelection}" nextStep="idRequestorData">
+				<!--title="{parts: [{path: 'Group>/bReadOnly'}, {path: 'Group>/ETUSERGROUP'}], formatter:'.formatter.formateTitle'}">-->
+				<content>
+					<VBox justifyContent="Center" id="Step2idVBox6">
+						<ui:Table id="idRR0RequestList" selectionMode="Single" selectionBehavior="RowOnly"
+							rows="{path: 'ETRequestListSet>/', templateShareable:false}" enableCellFilter="true" enableColumnReordering="true" alternateRowColors="true"
+							enableBusyIndicator="true" ariaLabelledBy="title" rowSelectionChange="onSelectionChangeRR0RequestList" class="sapUiSizeCompact"
+							enableSelectAll="false" visible="true" visibleRowCount="10" filter="onRequestListFilter" title="{i18n>RequestorData}">
+						
+							<ui:extension>
+								<OverflowToolbar id="idRequestListToolBar" class="sapMTBHeader-CTX">
+								<variant:VariantManagement id="sIdMNGRR0VarMgmtTable" class="sapUiSmallMarginBegin sapUiCompFilterBarMarginLeft"
+										showExecuteOnSelection="false" showShare="false" standardItemText="{i18n>stanView}" save="fnSaveTableVariant" manage="fnManageTableVariant"
+										select="fnTableVariantSelect" variantItems="{path:'/ETVariantSet',filters: [{ path: 'VariantType', operator: 'EQ', value1: 'RR0Table'}]}"
+										visible="true">
+										<variant:variantItems>
+											<variant:VariantItem text="{VariantName}" key="{VariantKey}" author="{UserId}"></variant:VariantItem>
+										</variant:variantItems>
+									</variant:VariantManagement>
+									<Button id="idRR0BTNBack" press="onBack" text="{i18n>Back}" tooltip="{i18n>Back}" type="Emphasized" class="sapUiTinyMarginEnd"/>
+									<Button id="idRR0BTNRefresh" press="onRefreshList" text="{i18n>refresh}" tooltip="{i18n>refresh}" class="sapUiTinyMarginEnd"/>
+								</OverflowToolbar>
+							</ui:extension>
+							<ui:columns>
+								<ui:Column id="columnNPIReferenceRR0" autoResizable="true" width="10rem" sortProperty="ZREQID" filterProperty="ZREQID" visible="false">
+									<Label text="{i18n>NPIReference}"/>
+									<ui:template>
+										<Text text="{ETRequestListSet>ZREQID}" wrapping="false"/>
+									</ui:template>
+								</ui:Column>
+								<ui:Column id="columnCreateDateRR0" autoResizable="true" sortProperty="ZCREATE_DATE" filterProperty="ZCREATE_DATE" width="7rem">
+									<Label text="{i18n>CreatedOn}"/>
+									<ui:template>
+										<Text wrapping="false" text="{ path: 'ETRequestListSet>ZCREATE_DATE', formatter: '.formatter.dateUI' }"/>
+									</ui:template>
+								</ui:Column>
+							</ui:columns>
+						</ui:Table>
+					</VBox>
+				</content>
+			</WizardStep>
+		</Wizard>
+	</Page>
+</mvc:View>

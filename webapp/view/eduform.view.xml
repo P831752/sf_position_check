@@ -1,0 +1,1411 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:upload="sap.m.upload"
+	xmlns:microchart="sap.suite.ui.microchart"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	core:require="{DateType: 'sap/ui/model/type/Date'}"
+	controllerName="sfpositioncheck.controller.eduform"
+	xmlns:t="sap.ui.table" 
+	xmlns:u="sap.ui.unified"
+	xmlns:l="sap.ui.layout"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	height="100%">
+		
+	<!-- <ObjectPageLayout id="ObjectPageLayout" subSectionLayout="TitleOnLeft"> -->
+	<!-- showAnchorBar="false" - Hiding the Sections
+	useIconTabBar="true" - dispaly section only after clik. All sections are not visible -->
+
+	<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" useIconTabBar="true" isChildPage="true" selectedSection="opsGraduation">	
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle>
+				<actions>
+					<!-- <m:Button id="education" text="Add Education" type="Emphasized" press="onAddEducation"/> -->
+					<m:Button id="addEducation" text="Add Education" type="Emphasized" press="onPressAddEducation" ariaHasPopup="Menu"/>
+					<m:Button id="edit" text="Edit" type="Emphasized" press="onEdit" visible="false"/>
+                    <m:Button id="submit" text="" type="Emphasized" press="onSubmit"/>
+					<m:Button id="save" text="Save As Draft" type="Emphasized" press="onSave" visible="false"/>
+					<m:Button icon="sap-icon://pdf-attachment" type="Emphasized" press="onDownloadPDF" />
+					<m:Button id="cancel" text="Cancel" type="Emphasized" press="onCancel" visible="false"/>
+				</actions>
+    			<expandedHeading>
+				    <m:HBox alignItems="Center">
+                        <m:Image src="./images/Logo.png" height="50px" />
+						<m:Title text="" width="50px" />
+                        <m:Title text="Employee Educational Details" level="H2" class="customTitle"/>
+                    </m:HBox>
+					<!-- <m:Title text="Overview of Educational Details" wrapping="true" /> -->
+				</expandedHeading>
+				<snappedHeading>
+					<m:HBox>
+						<m:VBox>
+							<m:Avatar src="" class="sapUiSmallMarginEnd" />
+						</m:VBox>
+
+						<!-- <m:VBox>
+							<m:Title text="Overview of Educational Details" wrapping="true"/>
+							<m:Label design="Bold" text="Educational Details"/>
+						</m:VBox> -->
+					</m:HBox>
+				</snappedHeading>
+
+				<!-- <expandedContent>
+					<m:Label design="Bold" text="Educational Details"/>
+				</expandedContent> -->
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+
+		<headerContent>
+			<m:HBox class="sapUiSmallMarginEnd sapUiSmallMarginBottom">
+				<m:Avatar src="../templates/avatar.PNG" class="sapUiMediumMarginEnd" displaySize="L"/>
+			
+				<m:HBox class="sapUiSmallMarginEnd sapUiSmallMarginBottom">
+					<m:VBox>
+						<m:HBox class="sapUiTinyMarginBottom" renderType="Bare" >
+							<m:Label design="Bold" text="PS ID:" class="sapUiSmallMarginEnd"/>
+						</m:HBox>
+						<m:HBox class="sapUiTinyMarginBottom">
+							<m:Label design="Bold" text="Name:" class="sapUiSmallMarginEnd"/>
+						</m:HBox>
+						<m:HBox class="sapUiTinyMarginBottom">
+							<m:Label design="Bold" text="Grade/Cadre:" class="sapUiSmallMarginEnd"/>
+						</m:HBox>
+						<m:HBox class="sapUiTinyMarginBottom">
+							<m:Label design="Bold" text="IC:" class="sapUiSmallMarginEnd"/>
+						</m:HBox>					
+					</m:VBox>
+					<m:VBox>
+						<m:HBox class="sapUiTinyMarginBottom" renderType="Bare" >
+							<m:Text text="20367055"/>
+						</m:HBox>
+						<m:HBox class="sapUiTinyMarginBottom">
+							<m:Text text="DHANANJAY KUMAR"/>
+						</m:HBox>
+						<m:HBox class="sapUiTinyMarginBottom">
+							<m:Text text="M2-A"/>
+						</m:HBox>
+							<m:HBox class="sapUiTinyMarginBottom">
+							<m:Text text="Heavy Engineering"/>
+						</m:HBox>	
+					</m:VBox>						
+				</m:HBox>   
+			</m:HBox> 
+        </headerContent>
+
+        <sections>
+			<!-- <ObjectPageSection anchorBarButtonColor="Negative" titleUppercase="false" id="personalSection" title="SSC *" class="redAsterisk" importance="Medium"> -->
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="personalSection" title="SSC" importance="Medium">
+				<!-- <customAnchorBarButton>
+					<m:Button text="Edit" icon="sap-icon://edit" iconFirst="false" type="Transparent" press="onDiplomaEdit"/>						
+				</customAnchorBarButton> -->
+				<subSections>
+					<ObjectPageSubSection id="personalSectionSS1" title="SSC" titleUppercase="false" class="sapUiNoMargin">
+						
+						<actions>
+							<m:Text text="SSC" class="sapTextBold" />
+							<m:Text text=" " width="1085px"/>
+							<m:Button icon="sap-icon://edit" type="Transparent" press="onSSCEdit"/>
+							<m:Button icon="sap-icon://reset" type="Transparent" press="onSSCReset"/>							
+						</actions>
+						<m:VBox>
+						<m:VBox> 
+							<m:HBox>
+								<m:items>
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Education Certificate" />
+										<m:Text id="tEduCer1" width="200px" maxLines="1" tooltip="School Certificate (SSC, Std X and Less)" text="School Certificate (SSC, Std X and Less)" visible="true"/>									
+										<m:ComboBox id="iEduCer1" visible="false" selectedKey="{educerModel>key}"
+												items="{
+													path: 'educerModel>/',
+													sorter: { path: 'educerModel>text' }
+												}">
+											<core:Item key="{educerModel>key}" text="{educerModel>text}" />
+										</m:ComboBox>
+										<!-- <m:Text id="sscAboveUniversity" text=" " width=""/> -->
+										<m:Text text=" " width="20px"/>
+										<m:Label design="Bold" text="Duration (in months)" />
+										<m:Text id="tDuration1" visible="true" text="12"/>
+										<m:ComboBox id="iDuration1" visible="false" selectedKey="{durationModel>key}"
+												items="{
+													path: 'durationModel>/'
+												}">
+											<core:Item key="{durationModel>key}" text="{durationModel>text}" />
+										</m:ComboBox>	
+			                        </m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Institution Name" />
+										<m:Text id="tInsName1" maxLines="1" tooltip="Pandit Deendayal Petroleum University" text="Pandit Deendayal Petroleum University" visible="true"/>								
+										<m:ComboBox id="iInsName1" visible="false" selectionChange="instnameChange"
+                                                items="{
+                                                    path: 'instnameModel>/',
+                                                    sorter: { path: 'key' }
+                                                }">
+                                                <core:Item key="{instnameModel>key}" text="{instnameModel>text}" />
+                                        </m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Percentage" />
+										<m:Text id="tPercentage1" visible="true" text="75"/>
+										<m:Input id="iPercentage1" visible="false" value="75"/>							
+									</m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="University / Board" />
+										<m:Text id="tUnivName1" text="B S E B  Patna" visible="true"/>								
+										<m:ComboBox id="iUnivName1" visible="false" selectedKey="{sscboardModel>key}"
+												items="{
+													path: 'sscboardModel>/',
+													sorter: { path: 'sscboardModel>text' }
+												}">
+												<core:Item key="{sscboardModel>key}" text="{sscboardModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>	
+										<m:Label design="Bold" text="CGPA" />
+										<m:Text id="tCGPA1" visible="true" text=""/>
+										<m:Input id="iCGPA1" visible="false" value=""/>
+									</m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Year of Passing" />
+										<m:Text id="tYear1" visible="true" text="2001"/>
+										<!-- <m:Input id="iYear1" visible="false" value="2000"/>	 -->
+										<m:ComboBox id="iYear1" visible="false" selectedKey="{yearsModel>key}"
+												items="{
+													path: 'yearsModel>/',
+													sorter: { path: 'yearsModel>text' }
+												}">
+											<core:Item key="{yearsModel>key}" text="{yearsModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Division" />
+										<m:Text id="tDivision1" visible="true" text=""/>
+										<m:ComboBox id="iDivision1" visible="false" selectedKey="{divisionModel>key}"
+												items="{
+													path: 'divisionModel>/',
+													sorter: { path: 'divisionModel>text' }
+												}">
+											<core:Item key="{divisionModel>key}" text="{divisionModel>text}" />
+										</m:ComboBox>
+									</m:VBox>
+									
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Type of the Course" />
+										<m:Text id="tCourseType1" text="Full Time" visible="true"/>								
+										<m:ComboBox id="iCourseType1" visible="false" selectedKey="{coursetypeModel>key}"
+												items="{
+													path: 'coursetypeModel>/',
+													sorter: { path: 'coursetypeModel>text' }
+											}">
+											<core:Item key="{coursetypeModel>key}" text="{coursetypeModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Grade" />
+										<m:Text id="tGrade1" visible="true" text=""/>
+										<m:ComboBox id="iGrade1" visible="false" selectedKey="{gradeModel>key}"
+												items="{
+													path: 'gradeModel>/',
+													sorter: { path: 'gradeModel>text' }
+												}">
+											<core:Item key="{gradeModel>key}" text="{gradeModel>text}" />
+										</m:ComboBox>										
+									</m:VBox>
+                    			</m:items>
+                			</m:HBox>
+							</m:VBox>
+
+							<m:Text text=" " width="20px"/>
+										<m:Panel id="idSSCAttachements" headerText="Attachments" expandable="true" expanded="true" visible="false">
+											<upload:UploadSet 
+												id="uploadSetTradeSSC"
+												uploadUrl="/upload/"
+												maxFileSize="0.2"   
+												fileTypes="pdf"
+												mediaTypes="application/pdf"
+												uploadEnabled="true"
+												showIcons="true"
+												instantUpload="true"
+												mediaTypeMismatch="onMediaTypeMismatch"
+												fileSizeExceeded="onFileSizeExceeded"
+												uploadCompleted="onUploadCompleted">
+											</upload:UploadSet>
+										</m:Panel>
+
+						</m:VBox>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="ops12thHSC" title="HSC" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="subHSC" title="" titleUppercase="false">
+						<actions>
+							<m:Text text="HSC" class="sapTextBold" />
+							<m:Text text=" " width="1085px"/>
+							<m:Button icon="sap-icon://edit" type="Transparent" press="onHSCEdit"/>
+							<m:Button icon="sap-icon://reset" type="Transparent" press="onHSCReset"/>						
+						</actions>
+						<m:VBox> 
+							<m:HBox>
+								<m:items>
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Education Certificate" />
+										<m:Text id="tEduCer2" width="200px" maxLines="1" tooltip="School Certificate (SSC, Std X and Less)" text="School Certificate (SSC, Std X and Less)" visible="true"/>									
+										<m:ComboBox id="iEduCer2" visible="false" selectedKey="{educerModel>key}"
+												items="{
+													path: 'educerModel>/',
+													sorter: { path: 'educerModel>text' }
+												}">
+											<core:Item key="{educerModel>key}" text="{educerModel>text}" />
+										</m:ComboBox>
+										<!-- <m:Text id="sscAboveUniversity" text=" " width=""/> -->
+										<m:Text id="sscAboveUniversity2" text=" " width=""/>
+										<m:Label design="Bold" text="Duration (in months)" />
+										<m:Text id="tDuration2" visible="true" text="24"/>
+										<m:ComboBox id="iDuration2" visible="false" selectedKey="{durationModel>key}"
+												items="{
+													path: 'durationModel>/'
+												}">
+											<core:Item key="{durationModel>key}" text="{durationModel>text}" />
+										</m:ComboBox>	
+			                        </m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Institution Name" />
+										<m:Text id="tInsName2" maxLines="1" tooltip="Bihar Intermediate Education Council" text="Bihar Intermediate Education Council" visible="true"/>								
+										<m:ComboBox id="iInsName2" visible="false" selectedKey="{instnameModel>key}"
+												items="{
+													path: 'instnameModel>/',
+													sorter: { path: 'instnameModel>text' }
+												}">
+												<core:Item key="{instnameModel>key}" text="{instnameModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Percentage" />
+										<m:Text id="tPercentage2" visible="true" text="58.22"/>
+										<m:Input id="iPercentage2" visible="false" value="58.22"/>							
+									</m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="University / Board" />
+										<m:Text id="tUnivName2" text="BIEC  PATNA" visible="true"/>								
+										<m:ComboBox id="iUnivName2" visible="false" selectedKey="{sscboardModel>key}"
+												items="{
+													path: 'sscboardModel>/',
+													sorter: { path: 'sscboardModel>text' }
+												}">
+												<core:Item key="{sscboardModel>key}" text="{sscboardModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>	
+										<m:Label design="Bold" text="CGPA" />
+										<m:Text id="tCGPA2" visible="true" text=""/>
+										<m:Input id="iCGPA2" visible="false" value=""/>
+									</m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Year of Passing" />
+										<m:Text id="tYear2" visible="true" text="2003"/>
+										<!-- <m:Input id="iYear1" visible="false" value="2000"/>	 -->
+										<m:ComboBox id="iYear2" visible="false" selectedKey="{yearsModel>key}"
+												items="{
+													path: 'yearsModel>/',
+													sorter: { path: 'yearsModel>text' }
+												}">
+											<core:Item key="{yearsModel>key}" text="{yearsModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+										
+										<m:Label design="Bold" text="Division" />
+										<m:Text id="tDivision2" visible="true" text=""/>
+										<m:ComboBox id="iDivision2" visible="false" selectedKey="{divisionModel>key}"
+												items="{
+													path: 'divisionModel>/',
+													sorter: { path: 'divisionModel>text' }
+												}">
+											<core:Item key="{divisionModel>key}" text="{divisionModel>text}" />
+										</m:ComboBox>
+									</m:VBox>
+									
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Type of the Course" />
+										<m:Text id="tCourseType2" text="Full Time" visible="true"/>								
+										<m:ComboBox id="iCourseType2" visible="false" selectedKey="{coursetypeModel>key}"
+												items="{
+													path: 'coursetypeModel>/',
+													sorter: { path: 'coursetypeModel>text' }
+											}">
+											<core:Item key="{coursetypeModel>key}" text="{coursetypeModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Grade" />
+										<m:Text id="tGrade2" visible="true" text=""/>
+										<m:ComboBox id="iGrade2" visible="false" selectedKey="{gradeModel>key}"
+												items="{
+													path: 'gradeModel>/',
+													sorter: { path: 'gradeModel>text' }
+												}">
+											<core:Item key="{gradeModel>key}" text="{gradeModel>text}" />
+										</m:ComboBox>	
+									</m:VBox>
+                    			</m:items>
+                			</m:HBox>
+						</m:VBox>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsTradeCertificate" title="Trade Certificate" importance="Medium" visible="false">
+				<subSections>
+					<ObjectPageSubSection id="opsSubTradeCertificate" title="" titleUppercase="false">
+						<actions>
+							<m:Text id="idTradeTitle" text="Trade Certificate" class="sapTextBold" visible="false"/>
+							<m:Text id="tradeHeadingText" text=" " width=""/>
+							<m:Button icon="sap-icon://add" type="Transparent" press="onTradeAdd"/>
+							<m:Button icon="sap-icon://edit" type="Transparent" press="onTradeEdit"/>
+							<m:Button icon="sap-icon://reset" type="Transparent" press="onTradeReset"/>							
+						</actions>
+						<blocks>
+							<m:VBox>
+								<m:VBox> 
+									<m:HBox>
+										<m:items>
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Qualification Sub Type" />
+												<m:Text id="tQuaSubtype3" text="Foreign Trade" visible="true"/>							
+												<m:ComboBox id="iQuaSubtype3" visible="false" selectedKey="{quasubtypeModel>key}"
+														items="{
+															path: 'quasubtypeModel>/',
+															sorter: { path: 'quasubtypeModel>text' }
+														}">
+														<core:Item key="{quasubtypeModel>key}" text="{quasubtypeModel>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Institution Name" />
+												<m:Text id="tInsName3" text="National Public School" visible="true"/>								
+												<m:ComboBox id="iInsName3" visible="false" selectedKey="{instnameModel>key}"
+														items="{
+															path: 'instnameModel>/',
+															sorter: { path: 'instnameModel>text' }
+														}">
+														<core:Item key="{instnameModel>key}" text="{instnameModel>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="CGPA" />
+												<m:Text id="tCGPA3" visible="true" text="9"/>
+												<m:Input id="iCGPA3" visible="false" value="9"/>
+											</m:VBox>
+
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Education Certificate" />
+												<m:Text id="tEduCer3" text="None" visible="true"/>									
+												<m:ComboBox id="iEduCer3" visible="false" selectedKey="{educerModel>key}"
+														items="{
+															path: 'educerModel>/',
+															sorter: { path: 'educerModel>text' }
+														}">
+													<core:Item key="{educerModel>key}" text="{educerModel>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>	
+
+												<m:Label design="Bold" text="University / Board" />
+												<m:Text id="tUnivName3" text="Karnataka Board" visible="true"/>								
+												<m:ComboBox id="iUnivName3" visible="false" selectedKey="{sscboardModel>key}"
+														items="{
+															path: 'sscboardModel>/',
+															sorter: { path: 'sscboardModel>text' }
+														}">
+														<core:Item key="{sscboardModel>key}" text="{sscboardModel>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>	
+
+												<m:Label design="Bold" text="Division" />
+												<m:Text id="tDivision3" visible="true" text="IInd Class"/>
+												<m:Input id="iDivision3" visible="false" value="IInd Class"/>							
+											</m:VBox>
+
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Branch 1 (if appl)" />
+												<m:Text id="tBranch13" text="None" visible="true"/>
+												<m:ComboBox id="iBranch13" visible="false" selectedKey="{branch1Model>key}"
+														items="{
+															path: 'branch1Model>/',
+															sorter: { path: 'branch1Model>text' }
+														}">
+														<core:Item key="{branch1Model>key}" text="{branch1Model>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Type of the Course" />
+												<m:Text id="tCourseType3" text="On Line" visible="true"/>								
+												<m:ComboBox id="iCourseType3" visible="false" selectedKey="{coursetypeModel>key}"
+														items="{
+															path: 'coursetypeModel>/',
+															sorter: { path: 'coursetypeModel>text' }
+													}">
+													<core:Item key="{coursetypeModel>key}" text="{coursetypeModel>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Grade" />
+												<m:Text id="tGrade3" visible="true" text="A+"/>
+												<m:Input id="iGrade3" visible="false" value="A+"/>
+											</m:VBox>
+
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Branch 2 (if appl)" />
+												<m:Text id="tBranch23" text="Financial Analysis" visible="true"/>
+												<m:ComboBox id="iBranch23" visible="false" selectedKey="{branch2Model>key}"
+														items="{
+															path: 'branch2Model>/',
+															sorter: { path: 'branch2Model>text' }
+														}">
+													<core:Item key="{branch2Model>key}" text="{branch2Model>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Duration (in months)" />
+												<m:Text id="tDuration3" visible="true" text="18 months"/>
+												<m:Input id="iDuration3" visible="false" value="18 months"/>
+														
+											</m:VBox>
+											
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Year of Passing" />
+												<m:Text id="tYear3" visible="true" text="2005"/>
+												<m:Input id="iYear3" visible="false" value="2005"/>	
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Percentage" />
+												<m:Text id="tPercentage3" visible="true" text="73"/>
+												<m:Input id="iPercentage3" visible="false" value="73"/>		
+																			
+											</m:VBox>
+										</m:items>
+									</m:HBox>							
+								</m:VBox>
+
+								<m:Text text=" " width="20px"/>
+								<!-- <m:Text text=" " width="20px"/>
+									<m:VBox id="group1" class="sapUiSmallMargin">
+									<m:Label text="Username"/>
+									<m:Input id="usernameInput" value=""/>
+									<m:Label text="Password"/>
+									<m:Input id="passwordInput" type="Password"/>
+								</m:VBox> -->
+
+								<m:Panel id="idTradeAttachements" headerText="Attachments" expandable="true" expanded="true" visible="false">
+									<upload:UploadSet 
+										id="uploadSetTrade"
+										uploadUrl="/upload/"
+										maxFileSize="0.2"   
+										fileTypes="pdf"
+										mediaTypes="application/pdf"
+										uploadEnabled="true"
+										showIcons="true"
+										instantUpload="true"
+										mediaTypeMismatch="onMediaTypeMismatch"
+										fileSizeExceeded="onFileSizeExceeded"
+										uploadCompleted="onUploadCompleted">
+									</upload:UploadSet>
+								</m:Panel>
+							</m:VBox>
+						</blocks>					
+					</ObjectPageSubSection>
+					
+					<ObjectPageSubSection title="Trade Certificate 2" id="opsTradeCertificate1" titleUppercase="false" class="sapUiNoMargin" visible="false">
+						<actions>
+							<m:Button icon="sap-icon://delete" type="Transparent" press="onTradeDelete1"/>							
+						</actions>
+						<blocks>
+							<m:VBox>
+								<m:VBox> 
+									<m:HBox>
+										<m:items>
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Qualification Sub Type"/>
+												<m:ComboBox id="iQuaSubtype3.1" selectedKey="{quasubtypeModel>key}"
+														items="{
+															path: 'quasubtypeModel>/',
+															sorter: { path: 'quasubtypeModel>text' }
+														}">
+														<core:Item key="{quasubtypeModel>key}" text="{quasubtypeModel>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+  											    <m:Label design="Bold" text="Institution Name" />
+												<m:ComboBox id="iInsName3.1" selectedKey="{instnameModel>key}"
+																items="{
+																	path: 'instnameModel>/',
+																	sorter: { path: 'instnameModel>text' }
+																}">
+														<core:Item key="{instnameModel>key}" text="{instnameModel>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+												<m:Label design="Bold" text="Duration (in months)" />
+												<m:Input id="iDuration3.1" value="18 months"/>
+											</m:VBox>
+
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Education Certificate" />
+												<m:ComboBox id="iEduCer3.1" selectedKey="{educerModel>key}"
+														items="{
+															path: 'educerModel>/',
+															sorter: { path: 'educerModel>text' }
+														}">
+													<core:Item key="{educerModel>key}" text="{educerModel>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>	
+												<m:Label design="Bold" text="University / Board" />
+												<m:ComboBox id="iUnivName3.1" selectedKey="{sscboardModel>key}"
+														items="{
+															path: 'sscboardModel>/',
+															sorter: { path: 'sscboardModel>text' }
+														}">
+														<core:Item key="{sscboardModel>key}" text="{sscboardModel>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>	
+												<m:Label design="Bold" text="Percentage" />
+												<m:Input id="iPercentage3.1" value="70.47"/>							
+											</m:VBox>
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Branch 1 (if appl)" />
+												<m:ComboBox id="iBranch13.1" selectedKey="{branch1Model>key}"
+														items="{
+															path: 'branch1Model>/',
+															sorter: { path: 'branch1Model>text' }
+														}">
+ 													<core:Item key="{branch1Model>key}" text="{branch1Model>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Type of the Course" />
+												<m:ComboBox id="iCourseType3.1" selectedKey="{coursetypeModel>key}"
+														items="{
+																	path: 'coursetypeModel>/',
+																	sorter: { path: 'coursetypeModel>text' }
+													}">
+														<core:Item key="{coursetypeModel>key}" text="{coursetypeModel>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="CGPA" />
+												<m:Input id="iCGPA3.1" value="9"/>
+											</m:VBox>
+
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Branch 2 (if appl)" />
+												<m:ComboBox id="iBranch23.1" selectedKey="{branch2Model>key}"
+														items="{
+															path: 'branch2Model>/',
+															sorter: { path: 'branch2Model>text' }
+														}">
+													<core:Item key="{branch2Model>key}" text="{branch2Model>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Academic Start Date" />
+												<m:Text id="tStartDate3.1" visible="false" text="{ 
+																						path: 'oModelDate>/date', type: 'DateType',
+																								formatOptions: { style: 'medium' }
+																								}" 
+													/>
+												<m:DatePicker id="iStartDate3.1" value="{
+																				path: 'oModelDate>/date',
+																				type: 'DateType'}" visible="true"/>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Division" />
+												<m:Text id="tDivision3.1" visible="false" text="IInd Class"/>
+												<m:Input id="iDivision3.1" visible="true" value="IInd Class"/>		
+											</m:VBox>
+													
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Year of Passing" />
+												<m:Text id="tYear3.1" visible="false" text="2000"/>
+												<m:Input id="iYear3.1" visible="true" value="2000"/>	
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Percentage" />
+												<m:Text id="tPercentage3.1" visible="true" text="70"/>
+												<m:Input id="iPercentage3.11" visible="false" value="70"/>	
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Grade" />
+												<m:Text id="tGrade3.1" visible="false" text="A"/>
+												<m:Input id="iGrade3.1" visible="true" value="A"/>																			
+											</m:VBox>
+										</m:items>
+									</m:HBox>
+								</m:VBox>
+							<m:Text text=" " width="20px"/>
+								<!-- <m:Text text=" " width="20px"/>
+									<m:VBox id="group1" class="sapUiSmallMargin">
+									<m:Label text="Username"/>
+									<m:Input id="usernameInput" value=""/>
+									<m:Label text="Password"/>
+									<m:Input id="passwordInput" type="Password"/>
+								</m:VBox> -->
+
+ 						<m:Panel id="idTradeAttachements1" headerText="Attachments" expandable="true" expanded="true">
+									<upload:UploadSet 
+										id="uploadSetTrade1"
+										uploadUrl="/upload/"
+										maxFileSize="0.2"   
+										fileTypes="pdf"
+										mediaTypes="application/pdf"
+										uploadEnabled="true"
+										showIcons="true"
+										instantUpload="true"
+										mediaTypeMismatch="onMediaTypeMismatch"
+										fileSizeExceeded="onFileSizeExceeded"
+										uploadCompleted="onUploadCompleted">
+									</upload:UploadSet>
+								</m:Panel>
+							</m:VBox>
+						</blocks>
+					</ObjectPageSubSection>
+
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsDiploma" title="Diploma" importance="Medium" visible="false">
+				<subSections>
+					<!-- <template:repeat list="{oDiplomaModel>/Diploma}" var="subdiploma"> -->
+					<!-- <ObjectPageSubSection id="opsSubDiploma" title="Diploma" titleUppercase="false"> -->
+					<ObjectPageSubSection title="Diploma" titleUppercase="false" class="sapUiNoMargin">
+
+						<actions>
+							<m:Text id="idDiplomaTitle" text="Diploma" class="sapTextBold" visible="false"/>
+							<m:Text text=" " width="1000px"/>
+							<m:Button icon="sap-icon://add" type="Transparent" press="onDiplomaAdd"/>
+							<m:Button icon="sap-icon://edit" type="Transparent" press="onDiplomaEdit"/>
+							<m:Button icon="sap-icon://reset" type="Transparent" press="onDiplomaReset"/>							
+						</actions>
+
+						<m:VBox>
+							<m:HBox>
+								<m:items>
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Qualification Sub Type"/>
+										<m:Text id="tQuaSubtype4" maxLines="1" tooltip="Diploma In Admn.Management" text="Diploma In Admn.Management" visible="true"/>							
+										<m:ComboBox id="iQuaSubtype4" visible="false" selectedKey="{quasubtypeModel>key}"
+												items="{
+													path: 'quasubtypeModel>/',
+													sorter: { path: 'quasubtypeModel>text' }
+												}">
+												<core:Item key="{quasubtypeModel>key}" text="{quasubtypeModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Institution Name" />
+										<m:Text id="tInsName4" text="National Public School" visible="true"/>								
+										<m:ComboBox id="iInsName4" visible="false" selectedKey="{instnameModel>key}"
+												items="{
+													path: 'instnameModel>/',
+													sorter: { path: 'instnameModel>text' }
+												}">
+												<core:Item key="{instnameModel>key}" text="{instnameModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="CGPA" />
+										<m:Text id="tCGPA4" visible="true" text="9"/>
+										<m:Input id="iCGPA4" visible="false" value="9"/>
+			                        </m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Education Certificate" />
+										<m:Text id="tEduCer4" maxLines="1" tooltip="Diploma Electrical Engineering (DEE)" text="Diploma Electrical Engineering (DEE)" visible="true"/>									
+										<m:ComboBox id="iEduCer4" visible="false" selectedKey="{educerModel>key}"
+												items="{
+													path: 'educerModel>/',
+													sorter: { path: 'educerModel>text' }
+												}">
+											<core:Item key="{educerModel>key}" text="{educerModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>	
+
+										<m:Label design="Bold" text="University / Board" />
+										<m:Text id="tUnivName4" text="Karnataka Board" visible="true"/>								
+										<m:ComboBox id="iUnivName4" visible="false" selectedKey="{sscboardModel>key}"
+												items="{
+													path: 'sscboardModel>/',
+													sorter: { path: 'sscboardModel>text' }
+												}">
+												<core:Item key="{sscboardModel>key}" text="{sscboardModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>	
+										
+										<m:Label design="Bold" text="Division" />
+										<m:Text id="tDivision4" visible="true" text=""/>
+										<m:Input id="iDivision4" visible="false" value=""/>						
+									</m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Branch 1 (if appl)" />
+										<m:Text id="tBranch14" text="Finance" visible="true"/>
+										<m:ComboBox id="iBranch14" visible="false" selectedKey="{branch1Model>key}"
+												items="{
+													path: 'branch1Model>/',
+													sorter: { path: 'branch1Model>text' }
+												}">
+												<core:Item key="{branch1Model>key}" text="{branch1Model>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Type of the Course" />
+										<m:Text id="tCourseType4" text="Full Time" visible="true"/>								
+										<m:ComboBox id="iCourseType4" visible="false" selectedKey="{coursetypeModel>key}"
+												items="{
+													path: 'coursetypeModel>/',
+													sorter: { path: 'coursetypeModel>text' }
+											}">
+											<core:Item key="{coursetypeModel>key}" text="{coursetypeModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Grade" />
+										<m:Text id="tGrade4" visible="true" text="A"/>
+										<m:Input id="iGrade4" visible="false" value="A"/>
+									</m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Branch 2 (if appl)" />
+										<m:Text id="tBranch24" text="Wireman" visible="true"/>
+										<m:ComboBox id="iBranch24" visible="false" selectedKey="{branch2Model>key}"
+												items="{
+													path: 'branch2Model>/',
+													sorter: { path: 'branch2Model>text' }
+												}">
+											<core:Item key="{branch2Model>key}" text="{branch2Model>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Duration (in months)" />
+										<m:Text id="tDuration4" visible="true" text="24 months"/>
+										<m:Input id="iDuration4" visible="false" value="24 months"/>		
+									</m:VBox>
+									
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Year of Passing" />
+										<m:Text id="tYear4" visible="true" text="2007"/>
+										<m:Input id="iYear4" visible="false" value="2007"/>	
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Percentage" />
+										<m:Text id="tPercentage4" visible="true" text="70"/>
+										<m:Input id="iPercentage4" visible="false" value="70"/>			
+																			
+									</m:VBox>
+                    			</m:items>
+                			</m:HBox>
+						</m:VBox>
+					</ObjectPageSubSection>
+					<!-- </template:repeat> -->				
+			<ObjectPageSubSection title="Diploma 1" id="opsDiploma1" titleUppercase="false" class="sapUiNoMargin" visible="false">
+				<actions>
+					<!-- <m:Text id="idGraduationTitle1" text="Graduation" class="sapTextBold" /> 
+					<m:Text text=" " width="1150px"/> -->
+					<m:Button icon="sap-icon://delete" type="Transparent" press="onGraduationDelete1"/>							
+				</actions>
+
+						<blocks>
+							<m:Text text="In Progress" />
+						</blocks>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection title="Attachments" id="opsDiplomaAttach" titleUppercase="false" class="sapUiNoMargin" visible="false">
+						<actions>						
+						</actions>
+						<blocks>
+							<upload:UploadSet 
+								id="uploadSetDip"
+								uploadUrl="/upload/"
+								maxFileSize="0.2"   
+								fileTypes="pdf"
+								mediaTypes="application/pdf"
+								uploadEnabled="true"
+								showIcons="true"
+								instantUpload="true"
+								mediaTypeMismatch="onMediaTypeMismatch"
+								fileSizeExceeded="onFileSizeExceeded"
+								uploadCompleted="onUploadCompleted">
+							</upload:UploadSet>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection> 
+<!--			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsGraduation" title="Graduation" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="opsSubGraduation" title="Graduation" titleUppercase="false">
+						<blocks>
+							<m:Text text="In Progress" />
+						</blocks>
+					 <template:repeat list="{GraduationModel>/Graduation}" var="graduation">
+						<ObjectPageSubSection id="opsSubGraduation" title="Graduation" titleUppercase="false">
+							<blocks>
+								<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+												layout="ColumnLayout"
+												columnsM="3"
+												columnsL="3"
+												columnsXL="3">
+									<forms:content>
+										<m:Label design="Bold" text="Qualification Sub Type" />
+										<m:Text text="{graduation>qualification}" visible="true"/>
+
+										<m:Label design="Bold" text="Education Certificate" />
+										<m:Text text="{graduation>certificate}" visible="true"/>
+
+										<m:Label design="Bold" text="Institution Name" />
+										<m:Text text="{graduation>institution}" visible="true"/>   
+
+										<m:Label design="Bold" text="Year of Passing" />
+										<m:Text text="{graduation>year}" visible="true"/>
+									</forms:content>
+								</forms:SimpleForm>
+							</blocks>
+						</ObjectPageSubSection> 
+					</template:repeat>
+					</ObjectPageSubSection> 
+				</subSections>
+			</ObjectPageSection>  -->
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsGraduation" title="Graduation" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="opsSubGraduate" title="" titleUppercase="false" class="sapUiNoMargin">
+
+						<actions>
+							<m:Text id="idGraduationTitle" text="Graduation" class="sapTextBold" visible="false"/>
+							<m:Text text=" " width="970px"/>
+							<m:Button icon="sap-icon://add" type="Transparent" press="onGraduationAdd"/>
+							<m:Button icon="sap-icon://edit" type="Transparent" press="onGraduationEdit"/>
+							<m:Button icon="sap-icon://reset" type="Transparent" press="onGraduationReset"/>
+						</actions>
+						<m:VBox>
+						<m:VBox>
+							<m:HBox>
+								<m:items>
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Qualification Sub Type"/>
+										<m:Text id="tQuaSubtype5" text="Engineering" visible="true"/>							
+										<m:ComboBox id="iQuaSubtype5" visible="false" selectionChange="handleSelectionChangeG"
+												items="{
+													path: 'graduateModel>/QualificationType/0/QualificationSubType',
+													sorter: { path: 'DefaultValue' }
+												}">
+												<core:Item key="{graduateModel>ExternalCode}" text="{graduateModel>DefaultValue}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Institution Name" />
+										<m:Text id="tInsName5" maxLines="1" tooltip="Pandit Deendayal Petroleum University" text="Pandit Deendayal Petroleum University" visible="true"/>								
+										<m:ComboBox id="iInsName5" visible="false" selectedKey="{instnameModelG>key}"
+												items="{
+													path: 'instnameModelG>/',
+													sorter: { path: 'instnameModelG>text' }
+												}">
+												<core:Item key="{instnameModelG>key}" text="{instnameModelG>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="CGPA" />
+										<m:Text id="tCGPA5" visible="true" text="8.67"/>
+										<m:Input id="iCGPA5" visible="false" value="8.67"/>
+
+			                        </m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Education Certificate" />
+										<m:Text id="tEduCer5" text="Bachelor of Technology (BTech)" visible="true"/>									
+										<m:ComboBox id="iEduCer5" visible="false" selectedKey="{educerModelG>key}"
+												items="{
+													path: 'educerModelG>/',
+													sorter: { path: 'DefaultValue' }
+												}">
+											<core:Item key="{educerModelG>ExternalCode}" text="{educerModelG>DefaultValue}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>	
+
+										<m:Label design="Bold" text="University / Board" />
+										<m:Text id="tUnivName5" maxLines="1" tooltip="Maulana Abul Kalam Azad University of Technology, West Bengal" text="Maulana Abul Kalam Azad University of Technology, West Bengal" visible="true"/>								
+										<m:ComboBox id="iUnivName5" visible="false" selectedKey="{univModel>key}"
+												items="{
+													path: 'univModel>/',
+													sorter: { path: 'univModel>text' }
+												}">
+												<core:Item key="{univModel>key}" text="{univModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>	
+
+										<m:Label design="Bold" text="Division" />
+										<m:Text id="tDivision5" visible="true" text=""/>
+										<m:ComboBox id="iDivision5" visible="false" selectedKey="{divisionModel>key}"
+												items="{
+													path: 'divisionModel>/',
+													sorter: { path: 'divisionModel>text' }
+												}">
+											<core:Item key="{divisionModel>key}" text="{divisionModel>text}" />
+										</m:ComboBox>						
+									</m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Branch 1 (if appl)" />
+										<m:Text id="tBranch15" maxLines="1" tooltip="Electronics &amp; Instrumentation" text="Electronics &amp; Instrumentation" visible="true"/>
+										<m:ComboBox id="iBranch15" visible="false" selectedKey="{branchModelG>key}"
+												items="{
+													path: 'branchModelG>/',
+													sorter: { path: 'DefaultValue' }
+												}">
+												<core:Item key="{branchModelG>ExternalCode}" text="{branchModelG>DefaultValue}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Type of the Course" />
+										<m:Text id="tCourseType5" text="Full Time" visible="true"/>
+										<m:ComboBox id="iCourseType5" visible="false" selectedKey="{coursetypeModel>key}"
+													items="{
+															path: 'coursetypeModel>/',
+															sorter: { path: 'coursetypeModel>text' }
+												}">
+											<core:Item key="{coursetypeModel>key}" text="{coursetypeModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Grade" />
+										<m:Text id="tGrade5" visible="true" text=""/>
+										<m:Input id="iGrade5" visible="false" value=""/>
+									</m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Branch 2 (if appl)" />
+										<m:Text id="tBranch25" maxLines="1" tooltip="Electronics" text="Electronics" visible="true"/>
+										<m:ComboBox id="iBranch25" visible="false" selectedKey="{branchModelG>key}"
+												items="{
+													path: 'branchModelG>/',
+													sorter: { path: 'DefaultValue' }
+												}">
+											<core:Item key="{branchModelG>ExternalCode}" text="{branchModelG>DefaultValue}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Duration (in months)" />
+										<m:Text id="tDuration5" visible="true" text="48"/>
+										<m:ComboBox id="iDuration5" visible="false" selectedKey="{durationModel>key}"
+												items="{
+													path: 'durationModel>/'
+												}">
+											<core:Item key="{durationModel>key}" text="{durationModel>text}" />
+										</m:ComboBox>		
+									</m:VBox>
+									
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Year of Passing" />
+										<m:Text id="tYear5" visible="true" text="2009"/>
+												<m:ComboBox id="iYear5" visible="false" selectedKey="{yearsModel>key}"
+														items="{
+															path: 'yearsModel>/',
+															sorter: { path: 'yearsModel>text' }
+														}">
+													<core:Item key="{yearsModel>key}" text="{yearsModel>text}" />
+												</m:ComboBox>	
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Percentage" />
+										<m:Text id="tPercentage5" visible="true" text=""/>
+										<m:Input id="iPercentage5" visible="false" value=""/>											
+																			
+									</m:VBox>
+                    			</m:items>
+                			</m:HBox>
+						</m:VBox>
+						<m:Text text=" " width="20px"/>
+						<m:Panel id="opsGraduationAttach" headerText="Attachments" expandable="true" expanded="true" visible="false">
+							<upload:UploadSet 
+								id="uploadSet1"
+								uploadUrl="/upload/"
+								maxFileSize="0.2"   
+								fileTypes="pdf"
+								mediaTypes="application/pdf"
+								uploadEnabled="true"
+								showIcons="true"
+								instantUpload="true"
+								mediaTypeMismatch="onMediaTypeMismatch"
+								fileSizeExceeded="onFileSizeExceeded"
+								uploadCompleted="onUploadCompleted">
+							</upload:UploadSet>
+						</m:Panel>
+					</m:VBox>
+					</ObjectPageSubSection>
+
+					<ObjectPageSubSection title="Graduation 2" id="opsGraduation2" titleUppercase="false" class="sapUiNoMargin" visible="false">
+						<actions>
+							<m:Button icon="sap-icon://delete" type="Transparent" press="onGraduateDelete2"/>							
+						</actions>
+						<blocks>
+							<m:VBox>
+								<m:VBox> 
+									<m:HBox>
+										<m:items>
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Qualification Sub Type"/>
+												<m:ComboBox id="iQuaSubtype5.1" selectionChange="handleSelectionChange"
+														items="{
+															path: 'masterModel>/QualificationType/0/QualificationSubType',
+															sorter: { path: 'masterModel>DefaultValue' }
+														}">
+														<core:Item key="{masterModel>ExternalCode}" text="{masterModel>DefaultValue}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+  											    <m:Label design="Bold" text="Institution Name" />
+												<m:ComboBox id="iInsName5.1" selectedKey="{instnameModelG>key}"
+																items="{
+																	path: 'instnameModelG>/',
+																	sorter: { path: 'instnameModelG>text' }
+																}">
+														<core:Item key="{instnameModelG>key}" text="{instnameModelG>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="CGPA" />
+												<m:Input id="iCGPA5.1" value=""/>
+											</m:VBox>
+
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Education Certificate" />
+												<m:ComboBox id="iEduCer5.1" selectedKey="{educerModel>key}"
+														items="{
+															path: 'educerModel>/',
+															sorter: { path: 'DefaultValue' }
+														}">
+													<core:Item key="{educerModel>ExternalCode}" text="{educerModel>DefaultValue}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>	
+												<m:Label design="Bold" text="University / Board" />
+												<m:ComboBox id="iUnivName5.1" selectedKey="{univModel>key}"
+														items="{
+															path: 'univModel>/',
+															sorter: { path: 'univModel>text' }
+														}">
+														<core:Item key="{univModel>key}" text="{univModel>text}" />
+												</m:ComboBox>	
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Division" />
+												<m:Text id="tDivision5.1" visible="false" text="IInd Class"/>
+												<m:Input id="iDivision5.1" visible="true" value=""/>
+											</m:VBox>
+
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Branch 1 (if appl)" />
+												<m:ComboBox id="iBranch15.1" selectedKey="{branchModel>key}"
+														items="{
+															path: 'branchModel>/',
+															sorter: { path: 'DefaultValue' }
+														}">
+ 													<core:Item key="{branchModel>ExternalCode}" text="{branchModel>DefaultValue}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Type of the Course" />
+												<m:ComboBox id="iCourseType5.1" selectedKey="{coursetypeModel>key}"
+														items="{
+																	path: 'coursetypeModel>/',
+																	sorter: { path: 'coursetypeModel>text' }
+													}">
+														<core:Item key="{coursetypeModel>key}" text="{coursetypeModel>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Grade" />
+												<m:Text id="tGrade5.1" visible="false" text="A"/>
+												<m:Input id="iGrade5.1" visible="true" value=""/>
+
+											</m:VBox>
+
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Branch 2 (if appl)" />
+												<m:ComboBox id="iBranch25.1" selectedKey="{branchModel>key}"
+														items="{
+															path: 'branchModel>/',
+															sorter: { path: 'DefaultValue' }
+														}">
+													<core:Item key="{branchModel>ExternalCode}" text="{branchModel>DefaultValue}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+												<m:Label design="Bold" text="Duration (in months)" />
+												<m:ComboBox id="iDuration5.1" selectedKey="{durationModel>key}"
+														items="{
+															path: 'durationModel>/'
+														}">
+													<core:Item key="{durationModel>key}" text="{durationModel>text}" />
+												</m:ComboBox>
+												
+						
+											</m:VBox>
+													
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Year of Passing" />
+												<m:ComboBox id="iYear5.1" selectedKey="{yearsModel>key}"
+														items="{
+															path: 'yearsModel>/',
+															sorter: { path: 'yearsModel>text' }
+														}">
+													<core:Item key="{yearsModel>key}" text="{yearsModel>text}" />
+												</m:ComboBox>	
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Percentage" />
+												<m:Input id="iPercentage5.1" value=""/>																				
+											</m:VBox>
+										</m:items>
+									</m:HBox>
+								</m:VBox>
+							<m:Text text=" " width="20px"/>
+								<!-- <m:Text text=" " width="20px"/>
+									<m:VBox id="group1" class="sapUiSmallMargin">
+									<m:Label text="Username"/>
+									<m:Input id="usernameInput" value=""/>
+									<m:Label text="Password"/>
+									<m:Input id="passwordInput" type="Password"/>
+								</m:VBox> -->
+
+ 						<m:Panel id="idGraduateAttachement2" headerText="Attachments" expandable="true" expanded="true">
+									<upload:UploadSet 
+										id="uploadSetG2"
+										uploadUrl="/upload/"
+										maxFileSize="0.2"   
+										fileTypes="pdf"
+										mediaTypes="application/pdf"
+										uploadEnabled="true"
+										showIcons="true"
+										instantUpload="true"
+										mediaTypeMismatch="onMediaTypeMismatch"
+										fileSizeExceeded="onFileSizeExceeded"
+										uploadCompleted="onUploadCompleted">
+									</upload:UploadSet>
+								</m:Panel>
+							</m:VBox>
+						</blocks>
+					</ObjectPageSubSection>
+
+				</subSections>
+			</ObjectPageSection> 
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsMasters" title="Masters" importance="Medium" visible="false">
+				<subSections>
+					<ObjectPageSubSection title="Masters" titleUppercase="false" class="sapUiNoMargin">
+						<actions>
+							<m:Text text="Masters" class="sapTextBold" />
+							<m:Text text=" " width="1050px"/>
+							<m:Button icon="sap-icon://add" type="Transparent" press="onMastersAdd"/>
+							<m:Button icon="sap-icon://delete" type="Transparent" press="onMastersDelete"/>							
+						</actions>
+						<blocks>
+							<m:VBox>
+								<m:VBox> 
+									<m:HBox>
+										<m:items>
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Qualification Sub Type"/>
+												<m:ComboBox id="iQuaSubtype6" selectionChange="handleSelectionChange"
+														items="{
+															path: 'masterModel>/QualificationType/0/QualificationSubType',
+															sorter: { path: 'masterModel>DefaultValue' }
+														}">
+														<core:Item key="{masterModel>ExternalCode}" text="{masterModel>DefaultValue}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+  											    <m:Label design="Bold" text="Institution Name" />
+												<m:ComboBox id="iInsName6" selectedKey="{instnameModelG>key}"
+																items="{
+																	path: 'instnameModelG>/',
+																	sorter: { path: 'instnameModelG>text' }
+																}">
+														<core:Item key="{instnameModelG>key}" text="{instnameModelG>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="CGPA" />
+												<m:Input id="iCGPA6" value=""/>
+											</m:VBox>
+
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Education Certificate" />
+												<m:ComboBox id="iEduCer6" selectedKey="{educerModel>key}"
+														items="{
+															path: 'educerModel>/',
+															sorter: { path: 'DefaultValue' }
+														}">
+													<core:Item key="{educerModel>ExternalCode}" text="{educerModel>DefaultValue}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>	
+												<m:Label design="Bold" text="University / Board" />
+												<m:ComboBox id="iUnivName6" selectedKey="{univModel>key}"
+														items="{
+															path: 'univModel>/',
+															sorter: { path: 'univModel>text' }
+														}">
+														<core:Item key="{univModel>key}" text="{univModel>text}" />
+												</m:ComboBox>	
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Division" />
+												<m:Text id="tDivision6" visible="false" text="IInd Class"/>
+												<m:Input id="iDivision6" visible="true" value=""/>
+											</m:VBox>
+
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Branch 1 (if appl)" />
+												<m:ComboBox id="iBranch16" selectedKey="{branchModel>key}"
+														items="{
+															path: 'branchModel>/',
+															sorter: { path: 'DefaultValue' }
+														}">
+ 													<core:Item key="{branchModel>ExternalCode}" text="{branchModel>DefaultValue}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Type of the Course" />
+												<m:ComboBox id="iCourseType6" selectedKey="{coursetypeModel>key}"
+														items="{
+																	path: 'coursetypeModel>/',
+																	sorter: { path: 'coursetypeModel>text' }
+													}">
+														<core:Item key="{coursetypeModel>key}" text="{coursetypeModel>text}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Grade" />
+												<m:Text id="tGrade6" visible="false" text="A"/>
+												<m:Input id="iGrade6" visible="true" value=""/>
+
+											</m:VBox>
+
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Branch 2 (if appl)" />
+												<m:ComboBox id="iBranch26" selectedKey="{branchModel>key}"
+														items="{
+															path: 'branchModel>/',
+															sorter: { path: 'DefaultValue' }
+														}">
+													<core:Item key="{branchModel>ExternalCode}" text="{branchModel>DefaultValue}" />
+												</m:ComboBox>
+												<m:Text text=" " width="20px"/>
+												<m:Label design="Bold" text="Duration (in months)" />
+												<m:ComboBox id="iDuration6" selectedKey="{durationModel>key}"
+														items="{
+															path: 'durationModel>/'
+														}">
+													<core:Item key="{durationModel>key}" text="{durationModel>text}" />
+												</m:ComboBox>
+												
+						
+											</m:VBox>
+													
+											<m:VBox class="sapUiLargeMarginEnd" width="20%">
+												<m:Label design="Bold" text="Year of Passing" />
+												<m:ComboBox id="iYear6" selectedKey="{yearsModel>key}"
+														items="{
+															path: 'yearsModel>/',
+															sorter: { path: 'yearsModel>text' }
+														}">
+													<core:Item key="{yearsModel>key}" text="{yearsModel>text}" />
+												</m:ComboBox>	
+												<m:Text text=" " width="20px"/>
+
+												<m:Label design="Bold" text="Percentage" />
+												<m:Input id="iPercentage6" value=""/>																				
+											</m:VBox>
+										</m:items>
+									</m:HBox>
+								</m:VBox>
+							<m:Text text=" " width="20px"/>
+								<!-- <m:Text text=" " width="20px"/>
+									<m:VBox id="group1" class="sapUiSmallMargin">
+									<m:Label text="Username"/>
+									<m:Input id="usernameInput" value=""/>
+									<m:Label text="Password"/>
+									<m:Input id="passwordInput" type="Password"/>
+								</m:VBox> -->
+
+ 						<m:Panel id="idTradeAttachements6" headerText="Attachments" expandable="true" expanded="true">
+									<upload:UploadSet 
+										id="uploadSetTrade6"
+										uploadUrl="/upload/"
+										maxFileSize="0.2"   
+										fileTypes="pdf"
+										mediaTypes="application/pdf"
+										uploadEnabled="true"
+										showIcons="true"
+										instantUpload="true"
+										mediaTypeMismatch="onMediaTypeMismatch"
+										fileSizeExceeded="onFileSizeExceeded"
+										uploadCompleted="onUploadCompleted">
+									</upload:UploadSet>
+								</m:Panel>
+							</m:VBox>
+						</blocks>
+					</ObjectPageSubSection>
+
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsPostGraduate" title="Post Graduate Degree/Diploma/Program" importance="Medium" visible="false">
+				<subSections>
+					<ObjectPageSubSection id="opsSubPostGraduate" title="Post Graduate Degree/Diploma/Program" titleUppercase="false">
+						<blocks>
+							<m:Text text="In Progress" />
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<!-- <ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsPostGraduate1" title="Post" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="opsSubPostGraduate1" title="post" titleUppercase="false">						
+						<blocks>
+								<blockinblock:Block id="block" mode="Collapsed">
+									<ModelMapping externalModelName="jsonModel" externalPath="/Vendor" internalModelName="FirstBlock"/>
+							</blockinblock:Block>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection> -->
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsDoctorate" title="Doctorate/Ph.D/Fellowship" importance="Low" visible="false">
+				<subSections>
+					<ObjectPageSubSection id="opsSubDoctorate" title="Doctorate/Ph.D/Fellowship" titleUppercase="false">
+						<blocks>
+							<m:Text text="In Progress" />
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+        </sections>
+
+		<footer>
+			<m:OverflowToolbar>
+				<l:VerticalLayout class="sapUiContentPadding" width="100%">
+					<l:content>
+						<!-- <m:ToolbarSpacer/> -->
+						<m:CheckBox class="sapMTextBold" id= "idAcknowledgment" text="" valueState="Information" />
+							<!-- <m:Text text="I hereby declare that the information provided is true and correct." /> -->
+									<!-- <m:MessageStrip
+							text="Information with custom icon"
+							type="Information"
+							showIcon="true"
+							customIcon="sap-icon://locked"
+							class="sapUiMediumMarginBottom">
+						</m:MessageStrip> -->
+					</l:content>
+				</l:VerticalLayout>
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+
+</mvc:View>

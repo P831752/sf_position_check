@@ -1,0 +1,149 @@
+<mvc:View
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:m="sap.m"
+		xmlns:core="sap.ui.core"
+		core:require="{DateType: 'sap/ui/model/type/Date'}"
+		xmlns:html="http://www.w3.org/1999/xhtml"
+		controllerName="sfpositioncheck.SharedBlocks.BlockBlue">
+	<!-- <html:div style="height:4em; background-color: #A9EAFF ;"/> -->
+						<!-- <m:VBox>
+							<m:HBox>
+								<m:items>
+									<m:VBox class="sapUiLargeMarginEnd" width="25%">
+										<m:Label design="Bold" text="Qualification Sub Type" required="true"/>
+										<m:Text id="tQuaSubtype5" text="Diploma In Admn.Management" visible="true"/>							
+										<m:ComboBox id="iQuaSubtype5" visible="false" selectedKey="{quasubtypeModel>key}"
+												items="{
+													path: 'quasubtypeModel>/',
+													sorter: { path: 'quasubtypeModel>text' }
+												}">
+												<core:Item key="{quasubtypeModel>key}" text="{quasubtypeModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Institution Name" />
+										<m:Text id="tInsName5" text="National Public School" visible="true"/>								
+										<m:ComboBox id="iInsName5" visible="false" selectedKey="{instnameModel>key}"
+												items="{
+													path: 'instnameModel>/',
+													sorter: { path: 'instnameModel>text' }
+												}">
+												<core:Item key="{instnameModel>key}" text="{instnameModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Duration of the Course" />
+										<m:Text id="tDuration5" visible="true" text="1"/>
+										<m:Input id="iDuration5" visible="false" value="1"/>
+			                        </m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Education Certificate" />
+										<m:Text id="tEduCer5" text="Diploma Electrical Engineering (DEE)" visible="true"/>									
+										<m:ComboBox id="iEduCer5" visible="false" selectedKey="{educerModel>key}"
+												items="{
+													path: 'educerModel>/',
+													sorter: { path: 'educerModel>text' }
+												}">
+											<core:Item key="{educerModel>key}" text="{educerModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>	
+
+										<m:Label design="Bold" text="University Name" />
+										<m:Text id="tUnivName5" text="Karnataka Board" visible="true"/>								
+										<m:ComboBox id="iUnivName5" visible="false" selectedKey="{sscboardModel>key}"
+												items="{
+													path: 'sscboardModel>/',
+													sorter: { path: 'sscboardModel>text' }
+												}">
+												<core:Item key="{sscboardModel>key}" text="{sscboardModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>	
+
+										<m:Label design="Bold" text="Percentage" />
+										<m:Text id="tPercentage5" visible="true" text="70"/>
+										<m:Input id="iPercentage5" visible="false" value="70"/>							
+									</m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Branch 1 (if appl)" />
+										<m:Text id="tBranch15" text="Finance" visible="true"/>
+										<m:ComboBox id="iBranch15" visible="false" selectedKey="{branch1Model>key}"
+												items="{
+													path: 'branch1Model>/',
+													sorter: { path: 'branch1Model>text' }
+												}">
+												<core:Item key="{branch1Model>key}" text="{branch1Model>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Type of the Course" />
+										<m:Text id="tCourseType5" text="On Line" visible="true"/>								
+										<m:ComboBox id="iCourseType5" visible="false" selectedKey="{coursetypeModel>key}"
+												items="{
+													path: 'coursetypeModel>/',
+													sorter: { path: 'coursetypeModel>text' }
+											}">
+											<core:Item key="{coursetypeModel>key}" text="{coursetypeModel>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="CGPA" />
+										<m:Text id="tCGPA5" visible="true" text="9"/>
+										<m:Input id="iCGPA5" visible="false" value="9"/>
+									</m:VBox>
+
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Branch 2 (if appl)" />
+										<m:Text id="tBranch25" text="Wireman" visible="true"/>
+										<m:ComboBox id="iBranch25" visible="false" selectedKey="{branch2Model>key}"
+												items="{
+													path: 'branch2Model>/',
+													sorter: { path: 'branch2Model>text' }
+												}">
+											<core:Item key="{branch2Model>key}" text="{branch2Model>text}" />
+										</m:ComboBox>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Academic Start Date" />
+										<m:Text id="tStartDate5" visible="true" text="{ 
+																				path: 'oModelDate>/date', type: 'DateType',
+																					formatOptions: { style: 'medium' }
+																				}" 
+											/>
+										<m:DatePicker id="iStartDate5" value="{
+																		path: 'oModelDate>/date',
+																		type: 'DateType'}" visible="false"/>
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Division" />
+										<m:Text id="tDivision5" visible="true" text="Science"/>
+										<m:Input id="iDivision5" visible="false" value="Science"/>		
+									</m:VBox>
+									
+									<m:VBox class="sapUiLargeMarginEnd" width="20%">
+										<m:Label design="Bold" text="Year of Passing" />
+										<m:Text id="tYear5" visible="true" text="2000"/>
+										<m:Input id="iYear5" visible="false" value="2000"/>	
+										<m:Text text=" " width="20px"/>
+
+
+										<m:Label design="Bold" text="Academic End Date" />
+										<m:Text id="tEndDate5" visible="true" text="{ 
+																					path: 'oModelDate>/date', type: 'DateType',
+																					formatOptions: { style: 'medium' }
+																				}" 
+											/>
+										<m:DatePicker id="iEndDate5" value="{
+																			path: 'oModelDate>/date',
+																			type: 'DateType'}" visible="false"/>	
+										<m:Text text=" " width="20px"/>
+
+										<m:Label design="Bold" text="Grade" />
+										<m:Text id="tGrade5" visible="true" text="A"/>
+										<m:Input id="iGrade5" visible="false" value="A"/>																			
+									</m:VBox>
+                    			</m:items>
+                			</m:HBox>
+						</m:VBox> -->
+</mvc:View>

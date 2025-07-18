@@ -1,0 +1,22 @@
+[
+    	{
+			"key": "A",
+			"text": "None",
+			"sub": "Engineering"
+		},
+		{
+			"key": "K",
+			"text": "Diploma Electrical Engineering (DEE)",
+			"sub": "Engineering"
+		},
+		{
+			"key": "M",
+			"text": "Bachelor of Law (BL)",
+			"sub": "Engineering"
+		},
+		{
+			"key": "T",
+			"text": "Master of Computer Applications (MCA)",
+			"sub": "Technical"
+		}
+	]

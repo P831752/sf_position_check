@@ -1,0 +1,244 @@
+<mvc:View
+		controllerName="sfpositioncheck.controller.position_check"
+		height="100%"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m"
+		xmlns:f="sap.f"
+		xmlns:fb="sap.ui.comp.filterbar"
+		xmlns:smartTable="sap.ui.comp.smarttable"
+		xmlns:svm="sap.ui.comp.smartvariants">
+		<f:DynamicPage headerExpanded="{/headerExpanded}">
+			<f:title>
+				<f:DynamicPageTitle>
+					<f:heading>
+						<Title text="{i18n>appTitle}"/>
+					</f:heading>
+					<f:expandedContent>
+						<Label id="expandedLabel" text="No filters active" />
+					</f:expandedContent>
+					<f:snappedContent>
+						<Label id="snappedLabel" text="No filters active" />
+					</f:snappedContent>
+				</f:DynamicPageTitle>
+			</f:title>
+			
+			<f:header>
+				<f:DynamicPageHeader>
+					<f:content>	
+						<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="Company" label="Company (Logged User)" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<ComboBox id="idCompany"
+											items="{
+												path: 'LoggedUserModel>/',
+												sorter: { path: 'LoggedUserModel>company' }
+												}">
+												<core:Item key="{LoggedUserModel>company}" text="{LoggedUserModel>company}" />
+										</ComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="Strategic Business Group" label="Strategic Business Group" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<ComboBox id="idStrategicBusiness"
+											items="{
+												path: '/FODivision', length:'500',
+												sorter: { path: 'name' }
+												}">
+												<core:Item key="{name}" text="{name}" />
+										</ComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="IC" label="IC (Logged User)" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<ComboBox id="idIC"
+											items="{
+												path: 'LoggedUserModel>/',
+												sorter: { path: 'LoggedUserModel>businessUnit' }
+												}">
+												<core:Item key="{LoggedUserModel>businessUnit}" text="{LoggedUserModel>businessUnit}" />
+										</ComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+
+
+								<fb:FilterGroupItem name="Business Unit" label="Business Unit" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<ComboBox id="idBusinessUnit"
+											items="{
+												path: '/FODepartment', length:'500',
+												sorter: { path: 'name' }
+												}">
+												<core:Item key="{name}" text="{name}" />
+										</ComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="Department/Projects" label="Department/Projects" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<ComboBox id="idDepartment"
+											items="{
+												path: '/cust_Department', length:'500',
+												sorter: { path: 'externalName' }
+												}">
+												<core:Item key="{externalName}" text="{externalName}" />
+										</ComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="Employee Group" label="Employee Group" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<ComboBox id="idEmpGroup"
+											items="{
+												path: '/cust_EmployeeClass', length:'500',
+												sorter: { path: 'externalName' }
+												}">
+												<core:Item key="{externalName}" text="{externalName}" />
+										</ComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="Band" label="Band" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<ComboBox id="idBand"
+											items="{
+												path: '/FODivision', length:'500',
+												sorter: { path: 'externalCode' }
+												}">
+												<core:Item key="{externalCode}" text="{externalCode}" />
+										</ComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="Pay Grade" label="Pay Grade" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<ComboBox id="idPayGrade"
+											items="{
+												path: '/FOPayGrade', length:'500',
+												sorter: { path: 'name' }
+												}">
+												<core:Item key="{name}" text="{name}" />
+										</ComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="Location" label="Location" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<ComboBox id="idLocation"
+											items="{
+												path: '/FOLocation', length:'500',
+												sorter: { path: 'name' }
+												}">
+												<core:Item key="{name}" text="{name}" />
+										</ComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="Cost Center" label="Cost Center" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<ComboBox id="idCostCenter"
+											items="{
+												path: '/FOCostCenter', length:'500',
+												sorter: { path: 'name' }
+												}">
+												<core:Item key="{name}" text="{name}" />
+										</ComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+			<f:content>
+				<!-- <Table
+					id="table"
+					inset="false"
+					items="{
+						path: '/Position'
+					}"
+				> -->
+				<Table id="idPostionTable" items="{PositionDataModel>/}" width="auto" busyIndicatorDelay="{overridelistView>/tableBusyDelay}" 
+					growing="true" growingThreshold="100" updateFinished=".onUpdateFinished" 
+					selectionChange="onTableSelection" sticky="ColumnHeaders">
+
+					<headerToolbar>
+						<OverflowToolbar>
+							<Title text="Vacant List" level="H2"/>
+							<ToolbarSpacer />
+							<Button  text="Export" type="Emphasized" press="onExport"/>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Position Code"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Position Title"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Last Modified Date"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Company"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Strategic Business Group"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="IC"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Business Unit"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Department/Projects"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Employee Group"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Band"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Pay Grade"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Location"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Cost Centre"/>
+						</Column>
+					</columns>
+
+					<items>
+						<ColumnListItem vAlign="Middle">
+							<cells>
+								<ObjectIdentifier title="{PositionDataModel>code}"/>
+								<Text text="{PositionDataModel>externalName_defaultValue}" />
+								<Text text="{ path: 'PositionDataModel>lastModifiedDateTime', formatter: '._dateFormatter'}" />
+								<Text text="{PositionDataModel>company}"/>
+								<Text text="{PositionDataModel>division}" />
+								<Text text="{PositionDataModel>businessUnit}" />
+								<Text text="{PositionDataModel>department}" />
+								<Text text="{PositionDataModel>cust_Departmentprojects}" />
+								<Text text="{PositionDataModel>cust_EmployeeGroup}" />
+								<Text text="{PositionDataModel>cust_Band}" />
+								<Text text="{PositionDataModel>payGrade}" />
+								<Text text="{PositionDataModel>location}" />
+								<Text text="{PositionDataModel>costCenter}" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			<!-- <smartTable:SmartTable
+				id="smartTable"
+				entitySet="Position"
+				smartFilterId="smartFilterBar"
+				tableType="Table"
+				enableAutoColumnWidth="true"
+				useTablePersonalisation="true"
+				header="Customer orders"
+				showRowCount="true">
+				<smartTable:layoutData>
+					<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+			</smartTable:SmartTable> -->
+			</f:content>
+		</f:DynamicPage>
+</mvc:View>

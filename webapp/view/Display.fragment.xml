@@ -1,0 +1,173 @@
+<core:FragmentDefinition
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:microchart="sap.suite.ui.microchart"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	controllerName="sfpositioncheck.controller.eduform"
+	xmlns:t="sap.ui.table" 
+	height="100%">
+		
+	<ObjectPageLayout id="ObjectPageLayout1" showTitleInHeaderContent="true" upperCaseAnchorBar="false" >
+		
+        <sections>
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="personalSection1" title="Address" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="personalSectionSS11" title="10th (SSC)" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent" id="idSimpleForm1"
+											  layout="ColumnLayout"
+                                              editable="false"
+											  columnsM="2"
+											  columnsL="3"
+											  columnsXL="3">								
+                                <forms:content>
+								<m:Label design="Bold" text="Institute Name" />
+								<m:Text id="tName1" text="XYZ" visible="true"/>
+                                <m:Input id="iName1" value="XYZ" class="sapUiSmallMarginBottom" visible="false" />
+
+								<m:Label design="Bold" text="Board/University" />
+								<m:Text text="ABC" />
+
+								<m:Label design="Bold" text="Percentage/CGPA" />
+								<m:Text text="70" />
+
+								<m:Label design="Bold" text="Year of Completion" />
+								<m:Text text="1990" />
+
+                                <m:Label design="Bold" text="Attachments" />
+								<m:Text text="" />
+								</forms:content>
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="ops12thHSC1" title="12th (HSC)" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="12thHSC1" title="12th (HSC)" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="2"
+											  columnsL="3"
+											  columnsXL="3">								
+
+								<m:Label design="Bold" text="Institute Name" />
+								<m:Text text="XYZ" />
+
+								<m:Label design="Bold" text="Board/University" />
+								<m:Text text="ABC" />
+
+								<m:Label design="Bold" text="Percentage/CGPA" />
+								<m:Text text="70" />
+
+								<m:Label design="Bold" text="Year of Completion" />
+								<m:Text text="1990" />
+
+                                <m:Label design="Bold" text="Attachments" />
+								<m:Text text="" />
+								
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsgraduation1" title="Graduation" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="graduation1" title="Graduation" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="2"
+											  columnsL="3"
+											  columnsXL="3">								
+
+								<m:Label design="Bold" text="Institute Name" />
+								<m:Text text="XYZ" />
+
+								<m:Label design="Bold" text="Board/University" />
+								<m:Text text="ABC" />
+
+								<m:Label design="Bold" text="Percentage/CGPA" />
+								<m:Text text="70" />
+
+								<m:Label design="Bold" text="Year of Completion" />
+								<m:Text text="1990" />
+
+                                <m:Label design="Bold" text="Attachments" />
+								<m:Text text="" />
+								
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opspg1" title="Post-Graduation" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="postgraduation1" title="Post-Graduation" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="2"
+											  columnsL="3"
+											  columnsXL="3">								
+
+								<m:Label design="Bold" text="Institute Name" />
+								<m:Text text="XYZ" />
+
+								<m:Label design="Bold" text="Board/University" />
+								<m:Text text="ABC" />
+
+								<m:Label design="Bold" text="Percentage/CGPA" />
+								<m:Text text="70" />
+
+								<m:Label design="Bold" text="Year of Completion" />
+								<m:Text text="1990" />
+
+                                <m:Label design="Bold" text="Attachments" />
+								<m:Text text="" />
+								
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsother1" title="Other" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="other1" title="Other" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="2"
+											  columnsL="3"
+											  columnsXL="3">								
+
+								<m:Label design="Bold" text="Institute Name" />
+								<m:Text text="XYZ" />
+
+								<m:Label design="Bold" text="Board/University" />
+								<m:Text text="ABC" />
+
+								<m:Label design="Bold" text="Percentage/CGPA" />
+								<m:Text text="70" />
+
+								<m:Label design="Bold" text="Year of Completion" />
+								<m:Text text="1990" />
+
+                                <m:Label design="Bold" text="Attachments" />
+								<m:Text text="" />
+								
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+        </sections>
+	</ObjectPageLayout>
+</core:FragmentDefinition>

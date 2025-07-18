@@ -1,0 +1,813 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:upload="sap.m.upload"
+	xmlns:microchart="sap.suite.ui.microchart"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	core:require="{DateType: 'sap/ui/model/type/Date'}"
+	controllerName="sfpositioncheck.controller.eduform"
+	xmlns:t="sap.ui.table" 
+	xmlns:u="sap.ui.unified"
+	xmlns:l="sap.ui.layout"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	height="100%">
+		
+	<ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" upperCaseAnchorBar="false" >
+		
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle>
+				<actions>
+					<!-- <m:Button id="education" text="Add Education" type="Emphasized" press="onAddEducation"/> -->
+					<m:Button id="edit" text="Edit" type="Emphasized" press="onEdit"/>
+                    <m:Button id="submit" text="Submit" type="Emphasized" press="onSubmit" visible="false"/>
+					<m:Button id="cancel" text="Cancel" type="Emphasized" press="onCancel" visible="false"/>
+				</actions>
+    			<expandedHeading>
+					<m:Title text="Overview of Educational Details" wrapping="true" />
+				</expandedHeading>
+				<snappedHeading>
+					<m:HBox>
+						<m:VBox>
+							<m:Avatar src="" class="sapUiSmallMarginEnd" />
+						</m:VBox>
+
+						<m:VBox>
+							<m:Title text="Overview of Educational Details" wrapping="true"/>
+							<m:Label design="Bold" text="Educational Details"/>
+						</m:VBox>
+					</m:HBox>
+				</snappedHeading>
+
+				<expandedContent>
+					<m:Label design="Bold" text="Educational Details"/>
+				</expandedContent>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+
+		<headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true" >
+				<m:Avatar src="" class="sapUiMediumMarginEnd sapUiSmallMarginBottom" displaySize="L"/>
+
+				<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom" >
+				<m:Title text="Employee Basic Details" class="sapUiTinyMarginBottom" />
+					<m:HBox class="sapUiTinyMarginBottom" renderType="Bare" >
+						<m:Label design="Bold" text="PS ID:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="1234567"/>
+					</m:HBox>
+                    <m:HBox class="sapUiTinyMarginBottom">
+						<m:Label design="Bold" text="Email ID:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="abc@com"/>
+					</m:HBox>
+				</m:VBox>
+
+			</m:FlexBox>    
+        </headerContent>
+
+        <sections>
+			<ObjectPageSection anchorBarButtonColor="Negative" titleUppercase="false" id="personalSection" title="SSC *" class="redAsterisk" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection class="sapUxAPObjectPageSubSectionTransparentBackground" id="personalSectionSS1" title="SSC *" titleUppercase="false">
+						<blocks> 
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent" id="idSimpleFormSSC"
+											  layout="ColumnLayout"
+                                              editable="false"
+											  columnsM="2"
+											  columnsL="3"
+											  columnsXL="3">								
+                            <forms:content>
+								<m:Label design="Bold" text="Qualification Sub Type" required="true"/>
+								<m:Text id="tQuaSubtype1" text="Trade Certificate" visible="true"/>
+                                <!-- <m:Input id="iInsName" value="XYZ" class="sapUiSmallMarginBottom" visible="false" /> -->
+								
+								<m:ComboBox id="iQuaSubtype1" visible="false" selectedKey="{quasubtypeModel>key}"
+									items="{
+										path: 'quasubtypeModel>/',
+										sorter: { path: 'quasubtypeModel>text' }
+									}">
+									<core:Item key="{quasubtypeModel>key}" text="{quasubtypeModel>text}" />
+								</m:ComboBox>
+
+								<m:Label design="Bold" text="Education Certificate" />
+								<m:Text id="tEduCer1" text="VIII STD" visible="true"/>
+								<!-- <m:Input id="iBoard" value="ABC" class="sapUiSmallMarginBottom" visible="false" /> -->
+								
+								<m:ComboBox id="iEduCer1" visible="false" selectedKey="{educerModel>key}"
+									items="{
+										path: 'educerModel>/',
+										sorter: { path: 'educerModel>text' }
+									}">
+									<core:Item key="{educerModel>key}" text="{educerModel>text}" />
+								</m:ComboBox>
+
+								<m:Label design="Bold" text="Branch 1 (if appl)" />
+								<m:Text id="tBranch11" text="Zoology" visible="true"/>
+								<m:ComboBox id="iBranch11" visible="false" selectedKey="{branch1Model>key}"
+									items="{
+										path: 'branch1Model>/',
+										sorter: { path: 'branch1Model>text' }
+									}">
+									<core:Item key="{branch1Model>key}" text="{branch1Model>text}" />
+								</m:ComboBox>
+
+								<m:Label design="Bold" text="Branch 2 (if appl)" />
+								<m:Text id="tBranch21" text="Wireman" visible="true"/>
+								<m:ComboBox id="iBranch21" visible="false" selectedKey="{branch2Model>key}"
+									items="{
+										path: 'branch2Model>/',
+										sorter: { path: 'branch2Model>text' }
+									}">
+									<core:Item key="{branch2Model>key}" text="{branch2Model>text}" />
+								</m:ComboBox>
+
+                                <m:Label design="Bold" text="Institution Name" />
+								<m:Text id="tInsName1" text="National Public School" visible="true"/>
+								<!-- <m:Input id="iBoard" value="ABC" class="sapUiSmallMarginBottom" visible="false" /> -->
+								
+								<m:ComboBox id="iInsName1" visible="false" selectedKey="{instnameModel>key}"
+									items="{
+										path: 'instnameModel>/',
+										sorter: { path: 'instnameModel>text' }
+									}">
+									<core:Item key="{instnameModel>key}" text="{instnameModel>text}" />
+								</m:ComboBox>
+
+								<m:Label design="Bold" text="University Name" />
+								<m:Text id="tUnivName1" text="Karnataka Board" visible="true"/>
+								<!-- <m:Input id="iBoard" value="ABC" class="sapUiSmallMarginBottom" visible="false" /> -->
+								
+								<m:ComboBox id="iUnivName1" visible="false" selectedKey="{sscboardModel>key}"
+									items="{
+										path: 'sscboardModel>/',
+										sorter: { path: 'sscboardModel>text' }
+									}">
+									<core:Item key="{sscboardModel>key}" text="{sscboardModel>text}" />
+								</m:ComboBox>
+
+								<m:Label design="Bold" text="Type of the Course" />
+								<m:Text id="tCourseType1" text="On Line" visible="true"/>								
+								<m:ComboBox id="iCourseType1" visible="false" selectedKey="{coursetypeModel>key}"
+									items="{
+										path: 'coursetypeModel>/',
+										sorter: { path: 'coursetypeModel>text' }
+									}">
+									<core:Item key="{coursetypeModel>key}" text="{coursetypeModel>text}" />
+								</m:ComboBox>
+
+								<m:Label design="Bold" text="Year of Passing" />
+								<m:Text id="tYear1" visible="true" text="2000"/>
+								<m:Input id="iYear1" visible="false" value="2000"/>
+
+								<m:Label design="Bold" text="Academic Start Date" />
+								<m:Text id="tStartDate1" visible="true" text="{ 
+																		path: 'oModelDate>/date', type: 'DateType',
+																		formatOptions: { style: 'medium' }
+																	   }" 
+								/>
+								<m:DatePicker id="iStartDate1" value="{
+										path: 'oModelDate>/date',
+										type: 'DateType'}" visible="false"/>
+
+								<m:Label design="Bold" text="Academic End Date" />
+								<m:Text id="tEndDate1" visible="true" text="{ 
+																		path: 'oModelDate>/date', type: 'DateType',
+																		formatOptions: { style: 'medium' }
+																	   }" 
+								/>
+								<m:DatePicker id="iEndDate1" value="{
+																			path: 'oModelDate>/date',
+																			type: 'DateType'}" visible="false"/>
+
+								<m:Label design="Bold" text="Duration of the Course" />
+								<m:Text id="tDuration1" visible="true" text="1"/>
+								<m:Input id="iDuration1" visible="false" value="1"/>
+
+								<m:Label design="Bold" text="Percentage" />
+								<m:Text id="tPercentage1" visible="true" text="70"/>
+								<m:Input id="iPercentage1" visible="false" value="70"/>
+
+								<m:Label design="Bold" text="CGPA" />
+								<m:Text id="tCGPA1" visible="true" text="9"/>
+								<m:Input id="iCGPA1" visible="false" value="9"/>
+
+								<m:Label design="Bold" text="Division" />
+								<m:Text id="tDivision1" visible="true" text="Science"/>
+								<m:Input id="iDivision1" visible="false" value="Science"/>
+
+								<m:Label design="Bold" text="Grade" />
+								<m:Text id="tGrade1" visible="true" text="A"/>
+								<m:Input id="iGrade1" visible="false" value="A"/>
+
+							</forms:content>
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="ops12thHSC" title="HSC" importance="Medium">
+				<subSections>
+				<ObjectPageSubSection id="subHSC" title="HSC" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent" id="idSimpleFormHSC"
+											  layout="ColumnLayout"
+											  columnsM="2"
+											  columnsL="4"
+											  columnsXL="4">								
+                            <forms:content>
+								<m:Label class="redAsterisk" design="Bold" text="Qualification Sub Type"/>
+								<m:Text id="tQuaSubtype" text="Trade Certificate" visible="true"/>
+                                <!-- <m:Input id="iInsName" value="XYZ" class="sapUiSmallMarginBottom" visible="false" /> -->
+								
+								<m:ComboBox id="iQuaSubtype" visible="false" selectedKey="{quasubtypeModel>key}"
+									items="{
+										path: 'quasubtypeModel>/',
+										sorter: { path: 'quasubtypeModel>text' }
+									}">
+									<core:Item key="{quasubtypeModel>key}" text="{quasubtypeModel>text}" />
+								</m:ComboBox>
+
+								<m:Label class="redAsterisk" design="Bold" text="Education Certificate" />
+								<m:Text id="tEduCer" text="VIII STD" visible="true"/>
+								<!-- <m:Input id="iBoard" value="ABC" class="sapUiSmallMarginBottom" visible="false" /> -->
+								
+								<m:ComboBox id="iEduCer" visible="false" selectedKey="{educerModel>key}"
+									items="{
+										path: 'educerModel>/',
+										sorter: { path: 'educerModel>text' }
+									}">
+									<core:Item key="{educerModel>key}" text="{educerModel>text}" />
+								</m:ComboBox>
+
+								<m:Label class="redAsterisk" design="Bold" text="Branch 1 (if appl)" />
+								<m:Text id="tBranch1" text="Zoology" visible="true"/>
+								<m:ComboBox id="iBranch1" visible="false" selectedKey="{branch1Model>key}"
+									items="{
+										path: 'branch1Model>/',
+										sorter: { path: 'branch1Model>text' }
+									}">
+									<core:Item key="{branch1Model>key}" text="{branch1Model>text}" />
+								</m:ComboBox>
+
+								<m:Label class="redAsterisk" design="Bold" text="Branch 2 (if appl)" />
+								<m:Text id="tBranch2" text="Wireman" visible="true"/>
+								<m:ComboBox id="iBranch2" visible="false" selectedKey="{branch2Model>key}"
+									items="{
+										path: 'branch2Model>/',
+										sorter: { path: 'branch2Model>text' }
+									}">
+									<core:Item key="{branch2Model>key}" text="{branch2Model>text}" />
+								</m:ComboBox>
+
+                                <m:Label class="redAsterisk" design="Bold" text="Institution Name" />
+								<m:Text id="tInsName" text="National Public School" visible="true"/>
+								<!-- <m:Input id="iBoard" value="ABC" class="sapUiSmallMarginBottom" visible="false" /> -->
+								
+								<m:ComboBox id="iInsName" visible="false" selectedKey="{instnameModel>key}"
+									items="{
+										path: 'instnameModel>/',
+										sorter: { path: 'instnameModel>text' }
+									}">
+									<core:Item key="{instnameModel>key}" text="{instnameModel>text}" />
+								</m:ComboBox>
+
+								<m:Label class="redAsterisk" design="Bold" text="University Name" />
+								<m:Text id="tUnivName" text="MAHARASHTRA STATE BOARD OF SECONDARY HIGHER SECONDARY EDUCATION" visible="true"/>
+								<!-- <m:Input id="iBoard" value="ABC" class="sapUiSmallMarginBottom" visible="false" /> -->
+								
+								<m:ComboBox id="iUnivName" visible="false" selectedKey="{sscboardModel>key}"
+									items="{
+										path: 'sscboardModel>/',
+										sorter: { path: 'sscboardModel>text' }
+									}">
+									<core:Item key="{sscboardModel>key}" text="{sscboardModel>text}" />
+								</m:ComboBox>
+
+								<m:Label class="redAsterisk" design="Bold" text="Type of the Course" />
+								<m:Text id="tCourseType" text="On Line" visible="true"/>								
+								<m:ComboBox id="iCourseType" visible="false" selectedKey="{coursetypeModel>key}"
+									items="{
+										path: 'coursetypeModel>/',
+										sorter: { path: 'coursetypeModel>text' }
+									}">
+									<core:Item key="{coursetypeModel>key}" text="{coursetypeModel>text}" />
+								</m:ComboBox>
+
+								<m:Label class="redAsterisk" design="Bold" text="Year of Passing" />
+								<m:Text id="tYear" visible="true" text="2000"/>
+								<m:Input id="iYear" visible="false" value="2000"/>
+
+								<m:Label class="redAsterisk" design="Bold" text="Academic Start Date" />
+								<m:Text id="tStartDate" visible="true" text="{ 
+																		path: 'oModelDate>/date', type: 'DateType',
+																		formatOptions: { style: 'medium' }
+																	   }" 
+								/>
+								<m:DatePicker id="iStartDate" value="{
+										path: 'oModelDate>/date',
+										type: 'DateType'}" visible="false"/>
+
+								<m:Label class="redAsterisk" design="Bold" text="Academic End Date" />
+								<m:Text id="tEndDate" visible="true" text="{ 
+																		path: 'oModelDate>/date', type: 'DateType',
+																		formatOptions: { style: 'medium' }
+																	   }" 
+								/>
+								<m:DatePicker id="iEndDate" value="{
+																			path: 'oModelDate>/date',
+																			type: 'DateType'}" visible="false"/>
+
+								<m:Label class="redAsterisk" design="Bold" text="Duration of the Course" />
+								<m:Text id="tDuration" visible="true" text="1"/>
+								<m:Input id="iDuration" visible="false" value="1"/>
+
+								<m:Label class="redAsterisk" design="Bold" text="Percentage" />
+								<m:Text id="tPercentage" visible="true" text="70"/>
+								<m:Input id="iPercentage" visible="false" value="70"/>
+
+								<m:Label class="redAsterisk" design="Bold" text="CGPA" />
+								<m:Text id="tCGPA" visible="true" text="9"/>
+								<m:Input id="iCGPA" visible="false" value="9"/>
+
+								<m:Label class="redAsterisk" design="Bold" text="Division" />
+								<m:Text id="tDivision" visible="true" text="Science"/>
+								<m:Input id="iDivision" visible="false" value="Science"/>
+
+								<m:Label class="redAsterisk" design="Bold" text="Grade" />
+								<m:Text id="tGrade" visible="true" text="A"/>
+								<m:Input id="iGrade" visible="false" value="A"/>	
+								<!-- <m:Label design="Bold" text="Attachments" />
+								<u:FileUploader
+									id="fileUploader2" name="myFileUpload" uploadUrl="upload/" tooltip="Upload your file from your local system"
+									change="handleUploadPress" fileType="xlsx,xls" uploadComplete="handleUploadComplete"/> -->
+							</forms:content>								
+							</forms:SimpleForm>
+
+						</blocks>
+
+					</ObjectPageSubSection>
+
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsTradeCertificate" title="{i18n>title1}" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="opsSubTradeCertificate" title="{i18n>title1}" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="2"
+											  columnsL="4"
+											  columnsXL="5">	
+								<forms:content>
+									<m:Label design="Bold" text="Qualification Sub Type" />
+									<m:Text id="tQuaSubtype2" text="Trade Certificate" visible="true"/>
+
+									<m:Label design="Bold" text="Education Certificate" />
+									<m:Text id="tEduCer2" text="VIII STD" visible="true"/>
+
+									<m:Label design="Bold" text="Branch 1 (if appl)" />
+									<m:Text id="tBranch12" text="Zoology" visible="true"/>
+
+									<m:Label design="Bold" text="Branch 2 (if appl)" />
+									<m:Text id="tBranch22" text="Wireman" visible="true"/>
+
+									<m:Label design="Bold" text="Institution Name" />
+									<m:Text id="tInsName2" text="National Public School" visible="true"/>								
+
+									<m:Label design="Bold" text="University Name" />
+									<m:Text id="tUnivName2" text="Karnataka Board" visible="true"/>
+
+									<m:Label design="Bold" text="Type of the Course" />
+									<m:Text id="tCourseType2" text="On Line" visible="true"/>
+
+									<m:Label design="Bold" text="Year of Passing" />
+									<m:Text id="tYear2" visible="true" text="2000"/>
+
+									<m:Label design="Bold" text="Academic Start Date" />
+									<m:Text id="tStartDate2" visible="true" text="22, May 2025" />	
+
+									<m:Label design="Bold" text="Academic End Date" />
+									<m:Text id="tEndDate2" visible="true" text="22, May 2025" />		
+
+									<m:Label design="Bold" text="Duration of the Course" />
+									<m:Text id="tDuration2" visible="true" text="1"/>
+
+									<m:Label design="Bold" text="Percentage" />
+									<m:Text id="tPercentage2" visible="true" text="70"/>
+
+									<m:Label design="Bold" text="CGPA" />
+									<m:Text id="tCGPA2" visible="true" text="9"/>
+
+									<m:Label design="Bold" text="Division" />
+									<m:Text id="tDivision2" visible="true" text="Science"/>
+
+									<m:Label design="Bold" text="Grade" />
+									<m:Text id="tGrade2" visible="true" text="A"/>
+								</forms:content>													
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection id="opsTradeAttachements" title="Trade Certificate Attachements" titleUppercase="false" visible="false">
+						
+							<upload:UploadSet
+								id="UploadSet"
+								instantUpload="true"
+								showIcons="true"
+								uploadEnabled="true"
+								terminationEnabled="true"
+								fileTypes="txt,doc,png"
+								maxFileNameLength="30"
+								maxFileSize="200"
+								mediaTypes="text/plain,application/msword,image/png"
+								uploadUrl="../../../../upload"
+								items="{path: '/items', templateShareable: false}"
+								mode="MultiSelect"
+								selectionChanged="onSelectionChange"
+								afterItemRemoved="onAfterItemRemoved">
+							<upload:toolbar>
+								<m:OverflowToolbar>
+								<m:ToolbarSpacer/>
+								<m:Button
+										id="uploadSelectedButton"
+										text="Upload selected"
+										press="onUploadSelectedButton"/>
+								<m:Button
+										id="downloadSelectedButton"
+										text="Download selected"
+										press="onDownloadSelectedButton"/>
+								<m:Button
+										id="versionButton"
+										enabled="false"
+										text="Upload a new version"
+										press="onVersionUpload"/>
+								<upload:UploadSetToolbarPlaceholder />
+							</m:OverflowToolbar>
+						</upload:toolbar>
+						<upload:items>
+							<upload:UploadSetItem
+									fileName="{fileName}"
+									mediaType="{mediaType}"
+									url="{url}"
+									thumbnailUrl="{thumbnailUrl}"
+									markers="{path: 'markers', templateShareable: false}"
+									statuses="{path: 'statuses', templateShareable: false}"
+									uploadState="{uploadState}">
+								<upload:markers>
+									<m:ObjectMarker
+											type="{type}"
+											visibility="{visibility}"/>
+								</upload:markers>
+								<upload:statuses>
+									<m:ObjectStatus
+											title="{title}"
+											text="{text}"
+											state="{state}"
+											icon="{icon}"
+											active="{active}"/>
+								</upload:statuses>
+							</upload:UploadSetItem>
+						</upload:items>
+					</upload:UploadSet>
+						
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsDiploma" title="Diploma" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="opsSubDiploma" title="Diploma" titleUppercase="false">
+						<!-- <actions>
+							<m:Button id="edit1" text="Edit" type="Emphasized" press="onEdit"/>
+							<m:Button id="cancel1" text="Cancel" type="Emphasized" press="onCancel" visible="false"/>
+						</actions> -->
+
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="3"
+											  columnsL="3"
+											  columnsXL="3">	
+								<forms:content>
+									<m:Label design="Bold" text="Qualification Sub Type" />
+									<m:Text id="tQuaSubtype3" text="Trade Certificate" visible="true"/>
+
+									<m:Label design="Bold" text="Education Certificate" />
+									<m:Text id="tEduCer3" text="VIII STD" visible="true"/>
+
+									<m:Label design="Bold" text="Branch 1 (if appl)" />
+									<m:Text id="tBranch13" text="Zoology" visible="true"/>
+
+									<m:Label design="Bold" text="Branch 2 (if appl)" />
+									<m:Text id="tBranch23" text="Wireman" visible="true"/>
+
+									<m:Label design="Bold" text="Institution Name" />
+									<m:Text id="tInsName3" text="National Public School" visible="true"/>								
+
+									<m:Label design="Bold" text="University Name" />
+									<m:Text id="tUnivName3" text="Karnataka Board" visible="true"/>
+
+									<m:Label design="Bold" text="Type of the Course" />
+									<m:Text id="tCourseType3" text="On Line" visible="true"/>
+
+									<m:Label design="Bold" text="Year of Passing" />
+									<m:Text id="tYear3" visible="true" text="2000"/>
+
+									<m:Label design="Bold" text="Academic Start Date" />
+									<m:Text id="tStartDate3" visible="true" text="22, May 2025" />	
+
+									<m:Label design="Bold" text="Academic End Date" />
+									<m:Text id="tEndDate3" visible="true" text="22, May 2025" />		
+
+									<m:Label design="Bold" text="Duration of the Course" />
+									<m:Text id="tDuration3" visible="true" text="1"/>
+
+									<m:Label design="Bold" text="Percentage" />
+									<m:Text id="tPercentage3" visible="true" text="70"/>
+
+									<m:Label design="Bold" text="CGPA" />
+									<m:Text id="tCGPA3" visible="true" text="9"/>
+
+									<m:Label design="Bold" text="Division" />
+									<m:Text id="tDivision3" visible="true" text="Science"/>
+
+									<m:Label design="Bold" text="Grade" />
+									<m:Text id="tGrade3" visible="true" text="A"/>
+								</forms:content>													
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+
+					<ObjectPageSubSection id="opsDiplomaAttachements" title="Diploma Attachements" titleUppercase="false" visible="false">
+						<m:Label design="Bold" text="Attachments" />								
+						<u:FileUploader id="fileUploader1" name="myFileUpload" uploadUrl="upload/" 
+							tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete"/>
+						<m:Button text="Upload File" press="handleUploadPress"/>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsGraduation" title="Graduation" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="opsSubGraduation" title="Graduation" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="2"
+											  columnsL="3"
+											  columnsXL="3">
+								<forms:content>
+									<m:Label design="Bold" text="Qualification Sub Type" />
+									<m:Text id="tQuaSubtype4" text="Trade Certificate" visible="true"/>
+
+									<m:Label design="Bold" text="Education Certificate" />
+									<m:Text id="tEduCer4" text="VIII STD" visible="true"/>
+
+									<m:Label design="Bold" text="Branch 1 (if appl)" />
+									<m:Text id="tBranch14" text="Zoology" visible="true"/>
+
+									<m:Label design="Bold" text="Branch 2 (if appl)" />
+									<m:Text id="tBranch24" text="Wireman" visible="true"/>
+
+									<m:Label design="Bold" text="Institution Name" />
+									<m:Text id="tInsName4" text="National Public School" visible="true"/>								
+
+									<m:Label design="Bold" text="University Name" />
+									<m:Text id="tUnivName4" text="Karnataka Board" visible="true"/>
+
+									<m:Label design="Bold" text="Type of the Course" />
+									<m:Text id="tCourseType4" text="On Line" visible="true"/>
+
+									<m:Label design="Bold" text="Year of Passing" />
+									<m:Text id="tYear4" visible="true" text="2000"/>
+
+									<m:Label design="Bold" text="Academic Start Date" />
+									<m:Text id="tStartDate4" visible="true" text="22, May 2025" />	
+
+									<m:Label design="Bold" text="Academic End Date" />
+									<m:Text id="tEndDate4" visible="true" text="22, May 2025" />		
+
+									<m:Label design="Bold" text="Duration of the Course" />
+									<m:Text id="tDuration4" visible="true" text="1"/>
+
+									<m:Label design="Bold" text="Percentage" />
+									<m:Text id="tPercentage4" visible="true" text="70"/>
+
+									<m:Label design="Bold" text="CGPA" />
+									<m:Text id="tCGPA4" visible="true" text="9"/>
+
+									<m:Label design="Bold" text="Division" />
+									<m:Text id="tDivision4" visible="true" text="Science"/>
+
+									<m:Label design="Bold" text="Grade" />
+									<m:Text id="tGrade4" visible="true" text="A"/>
+								</forms:content>														
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsMasters" title="Masters" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="opsSubMasters" title="Masters" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="2"
+											  columnsL="3"
+											  columnsXL="3">														
+								<forms:content>
+									<m:Label design="Bold" text="Qualification Sub Type" />
+									<m:Text id="tQuaSubtype5" text="Trade Certificate" visible="true"/>
+
+									<m:Label design="Bold" text="Education Certificate" />
+									<m:Text id="tEduCer5" text="VIII STD" visible="true"/>
+
+									<m:Label design="Bold" text="Branch 1 (if appl)" />
+									<m:Text id="tBranch15" text="Zoology" visible="true"/>
+
+									<m:Label design="Bold" text="Branch 2 (if appl)" />
+									<m:Text id="tBranch25" text="Wireman" visible="true"/>
+
+									<m:Label design="Bold" text="Institution Name" />
+									<m:Text id="tInsName5" text="National Public School" visible="true"/>								
+
+									<m:Label design="Bold" text="University Name" />
+									<m:Text id="tUnivName5" text="Karnataka Board" visible="true"/>
+
+									<m:Label design="Bold" text="Type of the Course" />
+									<m:Text id="tCourseType5" text="On Line" visible="true"/>
+
+									<m:Label design="Bold" text="Year of Passing" />
+									<m:Text id="tYear5" visible="true" text="2000"/>
+
+									<m:Label design="Bold" text="Academic Start Date" />
+									<m:Text id="tStartDate5" visible="true" text="22, May 2025" />	
+
+									<m:Label design="Bold" text="Academic End Date" />
+									<m:Text id="tEndDate5" visible="true" text="22, May 2025" />		
+
+									<m:Label design="Bold" text="Duration of the Course" />
+									<m:Text id="tDuration5" visible="true" text="1"/>
+
+									<m:Label design="Bold" text="Percentage" />
+									<m:Text id="tPercentage5" visible="true" text="70"/>
+
+									<m:Label design="Bold" text="CGPA" />
+									<m:Text id="tCGPA5" visible="true" text="9"/>
+
+									<m:Label design="Bold" text="Division" />
+									<m:Text id="tDivision5" visible="true" text="Science"/>
+
+									<m:Label design="Bold" text="Grade" />
+									<m:Text id="tGrade5" visible="true" text="A"/>
+								</forms:content>
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsPostGraduate" title="Post Graduate Degree/Diploma/Program" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="opsSubPostGraduate" title="Post Graduate Degree/Diploma/Program" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="2"
+											  columnsL="3"
+											  columnsXL="3">														
+								<forms:content>
+									<m:Label design="Bold" text="Qualification Sub Type" />
+									<m:Text id="tQuaSubtype6" text="Trade Certificate" visible="true"/>
+
+									<m:Label design="Bold" text="Education Certificate" />
+									<m:Text id="tEduCer6" text="VIII STD" visible="true"/>
+
+									<m:Label design="Bold" text="Branch 1 (if appl)" />
+									<m:Text id="tBranch16" text="Zoology" visible="true"/>
+
+									<m:Label design="Bold" text="Branch 2 (if appl)" />
+									<m:Text id="tBranch26" text="Wireman" visible="true"/>
+
+									<m:Label design="Bold" text="Institution Name" />
+									<m:Text id="tInsName6" text="National Public School" visible="true"/>								
+
+									<m:Label design="Bold" text="University Name" />
+									<m:Text id="tUnivName6" text="Karnataka Board" visible="true"/>
+
+									<m:Label design="Bold" text="Type of the Course" />
+									<m:Text id="tCourseType6" text="On Line" visible="true"/>
+
+									<m:Label design="Bold" text="Year of Passing" />
+									<m:Text id="tYear6" visible="true" text="2000"/>
+
+									<m:Label design="Bold" text="Academic Start Date" />
+									<m:Text id="tStartDate6" visible="true" text="22, May 2025" />	
+
+									<m:Label design="Bold" text="Academic End Date" />
+									<m:Text id="tEndDate6" visible="true" text="22, May 2025" />		
+
+									<m:Label design="Bold" text="Duration of the Course" />
+									<m:Text id="tDuration6" visible="true" text="1"/>
+
+									<m:Label design="Bold" text="Percentage" />
+									<m:Text id="tPercentage6" visible="true" text="70"/>
+
+									<m:Label design="Bold" text="CGPA" />
+									<m:Text id="tCGPA6" visible="true" text="9"/>
+
+									<m:Label design="Bold" text="Division" />
+									<m:Text id="tDivision6" visible="true" text="Science"/>
+
+									<m:Label design="Bold" text="Grade" />
+									<m:Text id="tGrade6" visible="true" text="A"/>
+								</forms:content>
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection anchorBarButtonColor="Positive" titleUppercase="false" id="opsDoctorate" title="Doctorate/Ph.D/Fellowship" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="opsSubDoctorate" title="Doctorate/Ph.D/Fellowship" titleUppercase="false">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent"
+											  layout="ColumnLayout"
+											  columnsM="2"
+											  columnsL="3"
+											  columnsXL="3">	
+								<forms:content>
+									<m:Label design="Bold" text="Qualification Sub Type" />
+									<m:Text id="tQuaSubtype7" text="Trade Certificate" visible="true"/>
+
+									<m:Label design="Bold" text="Education Certificate" />
+									<m:Text id="tEduCer7" text="VIII STD" visible="true"/>
+
+									<m:Label design="Bold" text="Branch 1 (if appl)" />
+									<m:Text id="tBranch17" text="Zoology" visible="true"/>
+
+									<m:Label design="Bold" text="Branch 2 (if appl)" />
+									<m:Text id="tBranch27" text="Wireman" visible="true"/>
+
+									<m:Label design="Bold" text="Institution Name" />
+									<m:Text id="tInsName7" text="National Public School" visible="true"/>								
+
+									<m:Label design="Bold" text="University Name" />
+									<m:Text id="tUnivName7" text="Karnataka Board" visible="true"/>
+
+									<m:Label design="Bold" text="Type of the Course" />
+									<m:Text id="tCourseType7" text="On Line" visible="true"/>
+
+									<m:Label design="Bold" text="Year of Passing" />
+									<m:Text id="tYear7" visible="true" text="2000"/>
+
+									<m:Label design="Bold" text="Academic Start Date" />
+									<m:Text id="tStartDate7" visible="true" text="22, May 2025" />	
+
+									<m:Label design="Bold" text="Academic End Date" />
+									<m:Text id="tEndDate7" visible="true" text="22, May 2025" />		
+
+									<m:Label design="Bold" text="Duration of the Course" />
+									<m:Text id="tDuration7" visible="true" text="1"/>
+
+									<m:Label design="Bold" text="Percentage" />
+									<m:Text id="tPercentage7" visible="true" text="70"/>
+
+									<m:Label design="Bold" text="CGPA" />
+									<m:Text id="tCGPA7" visible="true" text="9"/>
+
+									<m:Label design="Bold" text="Division" />
+									<m:Text id="tDivision7" visible="true" text="Science"/>
+
+									<m:Label design="Bold" text="Grade" />
+									<m:Text id="tGrade7" visible="true" text="A"/>
+								</forms:content>													
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+        </sections>
+		<footer>
+			<m:OverflowToolbar>
+				<l:VerticalLayout class="sapUiContentPadding" width="100%">
+		<l:content>
+				<!-- <m:ToolbarSpacer/> -->
+				<m:CheckBox class="sapMTextBold" id= "IdAcknowledgment" text="Acknowledgement: I hereby declare that the information provided is true and correct." valueState="Information" />
+				<!-- <m:Text text="I hereby declare that the information provided is true and correct." /> -->
+						<!-- <m:MessageStrip
+				text="Information with custom icon"
+				type="Information"
+				showIcon="true"
+				customIcon="sap-icon://locked"
+				class="sapUiMediumMarginBottom">
+			</m:MessageStrip> -->
+		</l:content>
+	</l:VerticalLayout>
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>

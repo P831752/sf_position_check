@@ -1,0 +1,1244 @@
+{
+    "QualificationType": [
+        {
+            "EffectiveStartDate": "1/1/1900",
+            "ExternalCode": "Q06",
+            "ExternalCode Value": "",
+            "DefaultValue": "Bachelor / Graduate",
+            "QualificationSubType": [
+                {
+                    "EffectiveStartDate": "1/1/1900",
+                    "ExternalCode": "Q06N",
+                    "ExternalCode Value": "Q06",
+                    "DefaultValue": "Non-Engineering",
+                    "EducationCertificate": [
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N054",
+                            "ExternalCodeValue": "Q06N",
+                            "DefaultValue": "Master of Science (M.S. Graduate Overseas degree)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N053",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "CIMA - INTER"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N052",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "ICWA - Inter"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N051",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "CS - Inter"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N050",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "CA - Inter"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N049",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelors of Homeopathic Medicine & Surgery"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N048",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of\u00a0Theology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N047",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Vocational (BVoc) in Accounting and Taxation"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N046",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Tourism Studies (BTS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N045",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Social Work (BSW)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N044",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Special Education"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N043",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Science in Information Technology (BSc IT)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N041",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Science Honours (BSc Hons)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N039",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Science in Applied Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N038",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Planning (B Plan)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N037",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Physical Education"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N036",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Philosophy (B Phil)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N035",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Pharmacy"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N034",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Medicine and Bachelor of Surgery (MBBS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N033",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Mass Media (BMM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N032",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Mass Communication"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N031",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Management Studies (BMS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N030",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Library and Information Science (BLIS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N029",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Science and Law (BSc LLB)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N028",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Technology and Law (B Tech LLB)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N027",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Computer Applications and Law (BCA LLB)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N026",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Business and Corporate Administration and Law (BCA LLB)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N025",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Arts and Bachelor of Law (BA LLB)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N024",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Journalism & Mass Communication"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N023",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Information Technology (BIT)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N022",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of General Law (BGL)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N021",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Fine Arts (BFA)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N020",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Environmental Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N019",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Education (B Ed)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N018",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Computer Science (BCS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N017",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Computer Application (BCA)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N016",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Commerce Honours (Bcom Hons)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N015",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Commerce (BCom)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N014",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Science (BSc)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N013",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Business Studies (BBS)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N012",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Business Management (BBM)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N011",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Business Administration Honours (BBA Hons)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N010",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Business Administration (BBA)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N009",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Business Administration & Bachelor of Legislative Law (BBA LLB)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N008",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Arts Honours (BA Hons)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N007",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Arts (BA)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N006",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Arts & Bachelor of Legislative Law (BA LLB)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N005",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of International Business And Finance"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N004",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor in Business Economics (BBE)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N003",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Law (BL)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N002",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Law (LLB)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N001",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Applied Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N055",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor of Communication"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06N056",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Bachelor In Office Administration"
+                        }
+                    ],
+                    "Branch": [
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0293",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "International Accounting & Digital Forensics"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0292",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Internal Auditing"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0291",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Internal Audit"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0290",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Interior Design & Decoration"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0289",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Interior Design"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0288",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Interdisciplinary Research in Marine Sciences"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0287",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Interaction Design"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0286",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Intellectual Property Rights"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0285",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Insurance Laws"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0284",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Insurance and Risk Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0283",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Inorganic Chemistry"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0282",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Innovative Waste Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0281",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Innovation, Entrepreneurship & Venture Development (IEV)*"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0280",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Infrastructure Finance, Development & Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0279",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Security & Safety"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0278",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Safety, Health & Environment"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0277",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Safety Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0276",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Safety And Hazards Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0275",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Safety and Environmental Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0274",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Safety and Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0273",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Safety"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0272",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Relations & Labour Welfare"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0271",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Relations"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0270",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Psychology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0269",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Hygiene & Safety"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0268",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Hygiene"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0267",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Health"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0266",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Design"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0265",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Business"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0264",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Industrial Arts and Design Practices"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0263",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Indian Music"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0262",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Import & Export Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0261",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Immersive Media Design"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0260",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Humanities & Social Sciences"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0259",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Human Rights"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0258",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Human Resources & Talent Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0257",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Human Resources"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0256",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Human Resource Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0255",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Human Resource Development"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0254",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Human Centered Design"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0253",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Housing"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0252",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Hotel Management & Catering Technology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0251",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Hotel Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0250",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Hospitality Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0249",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Hospitality and Tourism Administration"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0248",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Hospitality and Tourism"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0247",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Hospital Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0246",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Hospital and Health Care Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0245",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Hospital Administration"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0244",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Horticulture"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0243",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Homeopathy"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0242",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Home Science"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0241",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "History"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0240",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Hindi"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0239",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Heritage Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0238",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Health, Safety & Environment"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0237",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Health Care Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0236",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Health & Safety"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0235",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Graphic Design"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0234",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Government Accounting and Internal Audit"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0233",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Global Studies"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0232",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Geology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0231",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Geoinformatics"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0230",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Geography, Tourism and Travel Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0229",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Geography"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0228",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "Genetics"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0227",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "General Nursing"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06NB0226",
+                            "ExternalCode Value": "Q06N",
+                            "DefaultValue": "General Medicine"
+                        }
+                    ]
+                },
+                {
+                    "EffectiveStartDate": "1/1/1900",
+                    "ExternalCode": "Q06E",
+                    "ExternalCode Value": "Q06",
+                    "DefaultValue": "Engineering",
+                    "EducationCertificate": [
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06E007",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Bachelor of Science in Engineering Technology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06E006",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Bachelor of Technology Honors (BTech Hons)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06E005",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Bachelor of Technology (BTech)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06E004",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Bachelor of Engineering Honours (BE Hons)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06E003",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Bachelor of Engineering (BE)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06E002",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Bachelor of Architecture (B Arch)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06E001",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Associate Member of the Institution of Engineers (AMIE)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06E008",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Incorporated Engineer (IEng)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06E009",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Bachelor of Science in Engineering (BSc Engg)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06E010",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Bachelor of Science in Industrial Engineering (BSc IE)"
+                        }
+                    ],
+                    "Branch": [
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0204",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Data Science"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0203",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Data Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0271",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electronics & Communication Technology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0270",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electronics & Communication Engineering (Industry Integrated)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0269",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electronics & Communication Engineering (Bio-Medical Engineering)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0268",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electronics & Communication"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0268",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electronics & Instrumentation"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0267",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electronics"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0266",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electronic instrumentation & Control Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0265",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electronic Instrumentation & Communication System"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0264",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electronic Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0263",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electronic Circuits & System Design"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0262",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrochemical"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0261",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electro Plater"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0260",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrician"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0259",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Safety & Safety Management"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0258",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Power Systems"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0257",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Power System"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0256",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Power Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0255",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Machines & Drives"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0254",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Machines"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0253",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Engineering (Instrumentation & Control)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0252",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Engineering (Industrial Control)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0251",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Engineering & Electric Vehicle Technology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0250",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0249",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Energy Systems"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0248",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Energy Management & Audit"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0247",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Drives & Control"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0246",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Devices & Power Systems"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0245",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical Control Systems"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0244",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical & Electronics Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0243",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electrical & Communication"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0242",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electric Vehicle Technology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0241",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electric Power System"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0240",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Electric Drive & Utillization"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0239",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "E-Learning Technologies"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0238",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Earthquake Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0237",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Earthmoving Equipments"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0236",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Earth Moving Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0235",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Dyestuff Technology"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0234",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Drilling Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0233",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Drilling & Boring"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0232",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Draughtsman (Civil)"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0231",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Draughtsman"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0230",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Docks & Harbour Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0229",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Distributed Computing Systems"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0228",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Distributed & Mobile Computing"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0227",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Techniques & Instrumentation"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0226",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Systems & Computer Electronics"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0225",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Systems & Communications Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0224",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Systems"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0223",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Manufacturing"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0222",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Instrumentation"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0221",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Image Processing"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0220",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Electronics & Microprocessors"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0219",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Electronics & Microprocessor"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0218",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Electronics & Communication"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0217",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Electronics"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0216",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Communications & Networking"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0215",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Communication Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0214",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Digital Communication"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0213",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Die & Mould Making"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0212",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Design Mechanics"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0211",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Design Engineering"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0210",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Design & Manufacturing"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0209",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Design & Drafting"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0208",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Design & Development of Electronic Devices"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0207",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Design & Construction Concrete Structure"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0206",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Design"
+                        },
+                        {
+                            "EffectiveStartDate": "01-01-1900",
+                            "ExternalCode": "Q06EB0205",
+                            "ExternalCode Value": "Q06E",
+                            "DefaultValue": "Defence Technology"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

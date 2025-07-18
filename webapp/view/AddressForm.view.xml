@@ -1,0 +1,14 @@
+<mvc:View
+  controllerName="sfpositioncheck.controller.AddressFrom"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+
+  <VBox id="formContainer" class="sapUiSmallMargin">
+    <!-- Dynamically added address forms will go here -->
+  </VBox>
+
+  <HBox class="sapUiSmallMargin">
+    <Button text="Add Address" press="onAddAddress" icon="sap-icon://add"/>
+  </HBox>
+</mvc:View>

@@ -1,0 +1,24 @@
+<mvc:View
+  controllerName="sfpositioncheck.controller.eduform"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.uxap"
+  xmlns:core="sap.ui.core"
+  xmlns:m="sap.m"
+  xmlns:template="proxy/http/schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+
+  <ObjectPageLayout id="objectPageLayout2" showHeaderContent="true">
+    <sections>
+      <ObjectPageSection title="Dynamic Subsections">
+        <subSections>
+          <template:repeat list="{DynamicData>/Sections}" var="sub">
+            <ObjectPageSubSection title="{sub>Title}">
+              <blocks>
+                <m:Text text="{sub>Content}" />
+              </blocks>
+            </ObjectPageSubSection>
+          </template:repeat>
+        </subSections>
+      </ObjectPageSection>
+    </sections>
+  </ObjectPageLayout>
+</mvc:View>

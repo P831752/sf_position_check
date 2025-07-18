@@ -1,0 +1,13 @@
+<mvc:View
+  controllerName="sfpositioncheck.controller.EducationForm"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+
+  <VBox id="educationContainer" class="sapUiSmallMargin">
+    <!-- Dynamic education entries will be added here -->
+  </VBox>
+
+  <HBox class="sapUiSmallMarginTop">
+    <Button text="Add Qualification" icon="sap-icon://add" press="onAddQualification"/>
+  </HBox>
+</mvc:View>

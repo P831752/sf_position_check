@@ -1,0 +1,157 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "sfpositioncheck",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.15.6",
+      "toolsId": "fc273241-4f20-4f54-9482-0f99b587f961"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v2/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "DynamicData_alias": {
+				"uri": "model/section.json",
+				"type": "JSON"
+			}
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.131.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sfpositioncheck.i18n.i18n"
+        }
+      },
+      "DynamicData": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "DynamicData_alias"
+		},
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ],
+      "js": [
+        {
+          "uri": "libs/jszip.js"
+        },
+        {
+          "uri": "libs/xlsx.js"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "sfpositioncheck.view",
+        "async": true,
+        "viewPath": "sfpositioncheck.view",
+        "sample": {
+          "stretch": true,
+          "files": [
+            "eduform.view.xml",
+            "eduform.controller.js",
+            "Change.fragment.xml",
+            "Display.fragment.xml",
+            "manifest.json"
+          ]
+        }
+      },
+      "routes": [
+        {
+          "name": "Routeposition_check",
+          "pattern": ":?query:",
+          "target": [
+            "Targetposition_check"
+          ]
+        },
+        {
+          "name": "DownloadView",
+          "pattern": "DownloadView",
+          "target": [
+            "DownloadView"
+          ]
+        }
+      ],
+      "targets": {
+        "Targetposition_check": {
+          "id": "eduform",
+          "name": "eduform"
+        },
+        "DownloadView": {
+          "id": "DownloadView",
+          "name": "DownloadView"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "sfpositioncheck.view.App",
+      "type": "XML",
+      "id": "App"
+    },
+    "resourceRoots": {
+			"sfpositioncheck.SharedBlocks": "../SharedBlocks"
+		}
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "sfpositioncheck"
+  }
+}
