@@ -69,7 +69,7 @@
 							<m:Label design="Bold" text="Name:" class="sapUiSmallMarginEnd"/>
 						</m:HBox>
 						<m:HBox class="sapUiTinyMarginBottom">
-							<m:Label design="Bold" text="Grade/Cadre:" class="sapUiSmallMarginEnd"/>
+							<m:Label design="Bold" text="Grade/Cadre1:" class="sapUiSmallMarginEnd"/>
 						</m:HBox>
 						<m:HBox class="sapUiTinyMarginBottom">
 							<m:Label design="Bold" text="IC:" class="sapUiSmallMarginEnd"/>
